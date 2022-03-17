@@ -1,2 +1,2 @@
 # vite-antd-seed
-vite + react + antd + ts === 🚀 🛠
+vite + react + antd + ts
