@@ -1,0 +1,42 @@
+{
+  "name": "vite-antd-seed",
+  "version": "0.0.0",
+  "description": "vite antd starter",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "antd": "^4.19.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.33",
+    "@types/react-dom": "^17.0.10",
+    "@vitejs/plugin-react": "^1.0.7",
+    "autoprefixer": "^10.4.4",
+    "less": "^4.1.2",
+    "postcss": "^8.4.12",
+    "tailwindcss": "^3.0.23",
+    "typescript": "^4.5.4",
+    "vite": "^2.8.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zouhangwithsweet/vite-antd-seed.git"
+  },
+  "keywords": [
+    "vite",
+    "antd",
+    "tailwind"
+  ],
+  "author": "zouhang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zouhangwithsweet/vite-antd-seed/issues"
+  },
+  "homepage": "https://github.com/zouhangwithsweet/vite-antd-seed#readme"
+}
