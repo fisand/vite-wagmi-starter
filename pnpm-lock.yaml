@@ -10,6 +10,7 @@ specifiers:
   postcss: ^8.4.12
   react: ^17.0.2
   react-dom: ^17.0.2
+  recoil: ^0.7.0
   tailwindcss: ^3.0.23
   typescript: ^4.5.4
   vite: ^2.8.0
@@ -18,6 +19,7 @@ dependencies:
   antd: 4.19.2_react-dom@17.0.2+react@17.0.2
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
+  recoil: 0.7.0_react-dom@17.0.2+react@17.0.2
 
 devDependencies:
   '@types/react': 17.0.40
@@ -1063,6 +1065,10 @@ packages:
     dev: true
     optional: true
 
+  /hamt_plus/1.0.2:
+    resolution: {integrity: sha1-4hwlKWjH4zsg9qGwlM2FeHomVgE=}
+    dev: false
+
   /has-flag/3.0.0:
     resolution: {integrity: sha1-tdRU3CGZriJWmfNGfloH87lVuv0=}
     engines: {node: '>=4'}
@@ -1953,6 +1959,23 @@ packages:
     dependencies:
       picomatch: 2.3.1
     dev: true
+
+  /recoil/0.7.0_react-dom@17.0.2+react@17.0.2:
+    resolution: {integrity: sha512-NYG79ZciSILFIu6Zo3aoqPOIU0Ok+dIwA9DM4NdxIx0tKXKenAZWxsalyRQyGVfxR3cVynsgVu7XCAdKNa957A==}
+    peerDependencies:
+      react: '>=16.13.1'
+      react-dom: '*'
+      react-native: '*'
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+      react-native:
+        optional: true
+    dependencies:
+      hamt_plus: 1.0.2
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+    dev: false
 
   /regenerator-runtime/0.13.9:
     resolution: {integrity: sha512-p3VT+cOEgxFsRRA9X4lkI1E+k2/CtnKtU4gcxyaCUreilL/vqI6CdZ3wxVUx3UOUg+gnUOQQcRI7BmSI656MYA==}

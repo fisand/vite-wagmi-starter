@@ -1,10 +1,13 @@
 import { useState } from 'react'
 import { Button } from 'antd'
+import { useRecoilState } from 'recoil'
+import { textState } from './store'
 import logo from './logo.svg'
 import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [text, setText] = useRecoilState(textState)
 
   return (
     <div className="App">
