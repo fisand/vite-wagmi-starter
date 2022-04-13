@@ -1,9 +1,21 @@
-import { Suspense } from 'react'
-import { useRoutes } from 'react-router-dom'
+import { Suspense, useEffect } from 'react'
+import { useRoutes, useNavigate } from 'react-router-dom'
 import routes from '~react-pages'
 
+function Redirect({ to }: { to: string }) {
+  let navigate = useNavigate()
+  useEffect(() => {
+    navigate(to)
+  }, [])
+  return null
+}
+
 function App() {
-  return <Suspense fallback={<p>Loading...</p>}>{useRoutes(routes)}</Suspense>
+  return (
+    <Suspense fallback={<p>Loading...</p>}>
+      {useRoutes([...routes, { path: '*', element: <Redirect to="/" /> }])}
+    </Suspense>
+  )
 }
 
 export default App
