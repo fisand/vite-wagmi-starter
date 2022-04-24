@@ -1,0 +1,9 @@
+{
+  "extends": [
+    "react-app",
+    "plugin:react-hooks/recommended"
+  ],
+  "rules": {
+    "react-hooks/rules-of-hooks": "error"
+  }
+}
