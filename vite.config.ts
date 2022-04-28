@@ -7,7 +7,9 @@ import legacy from '@vitejs/plugin-legacy'
 export default defineConfig({
   plugins: [
     react(),
-    Pages(),
+    Pages({
+      exclude: ['**/components/*.tsx']
+    }),
     legacy({
       targets: ['defaults', 'not IE 11'],
     }),
