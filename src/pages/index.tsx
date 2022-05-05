@@ -5,8 +5,8 @@ const Home = () => {
   const { activateBrowserWallet, deactivate, account } = useEthers()
 
   return (
-    <div className="App">
-      <p className="text-3xl font-bold underline">Hello Vite + React + Antd Dapp!</p>
+    <div className="App p-4 lt-md:p-8 min-h-screen">
+      <p className="text-3xl font-bold underline hover:text-blue-300">Hello Vite + React + Antd Dapp!</p>
       <p>{account}</p>
       <p className='flex gap-4'>
         <Button type="primary" onClick={activateBrowserWallet}>

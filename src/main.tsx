@@ -5,8 +5,10 @@ import { RecoilRoot } from 'recoil'
 import { DAppProvider, Mainnet } from '@usedapp/core'
 import { getDefaultProvider } from 'ethers'
 import './assets/styles/index.less'
-import './index.css'
+// import './index.css'
 import App from './App'
+import 'uno.css'
+import '@unocss/reset/normalize.css'
 
 console.table(import.meta.env)
 
