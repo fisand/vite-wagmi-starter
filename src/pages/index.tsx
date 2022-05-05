@@ -5,7 +5,7 @@ const Home = () => {
   const { activateBrowserWallet, deactivate, account } = useEthers()
 
   return (
-    <div className="App p-4 lt-md:p-8 min-h-screen">
+    <div className="App p-4 lt-md:p-8 min-h-screen flex flex-col  items-center">
       <p className="text-3xl font-bold underline hover:text-blue-300">Hello Vite + React + Antd Dapp!</p>
       <p>{account && shortenAddress(account)}</p>
       <p className='flex gap-4'>
