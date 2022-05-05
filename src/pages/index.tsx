@@ -1,5 +1,5 @@
 import { Button } from 'antd'
-import { useEthers } from '@usedapp/core'
+import { useEthers, shortenAddress } from '@usedapp/core'
 
 const Home = () => {
   const { activateBrowserWallet, deactivate, account } = useEthers()
@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div className="App p-4 lt-md:p-8 min-h-screen">
       <p className="text-3xl font-bold underline hover:text-blue-300">Hello Vite + React + Antd Dapp!</p>
-      <p>{account}</p>
+      <p>{account && shortenAddress(account)}</p>
       <p className='flex gap-4'>
         <Button type="primary" onClick={activateBrowserWallet}>
           connect
