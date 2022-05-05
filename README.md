@@ -6,4 +6,4 @@ vite + react + antd + ts
 - 😏 **Vite** for dev/build
 - 😏 **Unocss** for CSS
 - 😏 **Vercel** for preview
-- 🤡
+- 🤡 **I** pieced it together
