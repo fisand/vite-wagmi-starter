@@ -3,9 +3,6 @@
 declare global {
   const createRef: typeof import('react')['createRef']
   const forwardRef: typeof import('react')['forwardRef']
-  const IconCarbonBullhorn: typeof import('~icons/carbon/bullhorn')['default']
-  const IconCarbonBullIconLogosReacthorn: typeof import('~icons/carbon/bull-icon-logos-reacthorn')['default']
-  const IconLogosReact: typeof import('~icons/logos/react')['default']
   const lazy: typeof import('react')['lazy']
   const memo: typeof import('react')['memo']
   const startTransition: typeof import('react')['startTransition']

@@ -1,15 +1,12 @@
-import { defineConfig } from 'vite'
+import { defineConfig, splitVendorChunkPlugin } from 'vite'
 import Pages from 'vite-plugin-pages'
 import react from '@vitejs/plugin-react'
-import { splitVendorChunkPlugin } from 'vite'
 // import legacy from '@vitejs/plugin-legacy'
 import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 import Unocss from 'unocss/vite'
-import presetWind from '@unocss/preset-wind'
-import presetIcons from '@unocss/preset-icons'
 import AutoImport from 'unplugin-auto-import/vite'
-
+import EslintPlugin from 'vite-plugin-eslint'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -22,14 +19,7 @@ export default defineConfig({
     Pages({
       exclude: ['**/![index.tsx]'],
     }),
-    Unocss({
-      presets: [
-        presetWind(),
-        presetIcons({
-          /* options */
-        }),
-      ],
-    }),
+    Unocss(),
     AutoImport({
       imports: ['react'],
       dts: './src/auto-imports.d.ts',
@@ -39,6 +29,7 @@ export default defineConfig({
         }),
       ],
     }),
+    EslintPlugin(),
     splitVendorChunkPlugin(),
     // legacy({
     //   targets: ['defaults', 'not IE 11'],

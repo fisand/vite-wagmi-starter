@@ -5,15 +5,18 @@ const Home = () => {
   const { activateBrowserWallet, deactivate, account } = useEthers()
 
   return (
-    <div className="App p-4 lt-md:p-8 min-h-screen flex flex-col  items-center">
+    <div className="App p-4 lt-md:p-8 min-h-screen flex-col-center">
+      <a href="https://github.com/zouhangwithsweet" target="_blank">
+        <img src="https://zouhaha-blog-next.vercel.app/logo.png" alt="" className="w-32 rounded-full mb-10 shadow hover:shadow-blue-300" />
+      </a>
       <p className="text-3xl font-bold underline hover:text-blue-300">Hello Vite + React + Antd Dapp!</p>
       <p>{account && shortenAddress(account)}</p>
-      <p className='flex gap-4'>
+      <p className="flex gap-4">
         <Button type="primary" onClick={activateBrowserWallet} className="flex items-center">
-          connect <span className='i-carbon:chart-spiral'></span>
+          connect <span className="i-carbon:chart-spiral"></span>
         </Button>
         <Button type="primary" onClick={deactivate} className="flex items-center">
-          disconnect <span className='i-carbon:cookie'></span>
+          disconnect <span className="i-carbon:cookie"></span>
         </Button>
       </p>
       <p>

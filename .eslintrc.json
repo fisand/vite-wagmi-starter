@@ -1,9 +1,32 @@
 {
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "ignorePatterns": [
+    "~icons/**/*.jsx"
+  ],
   "extends": [
-    "react-app",
-    "plugin:react-hooks/recommended"
+    "plugin:react-hooks/recommended",
+    "plugin:import/warnings"
   ],
   "rules": {
-    "react-hooks/rules-of-hooks": "error"
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "error",
+    // suppress errors for missing 'import React' in files
+    "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/explicit-module-boundary-types": 0,
+    "semi": [
+      0,
+      "always"
+    ],
+    "import/order": [
+      "warn",
+      {}
+    ]
   }
 }
