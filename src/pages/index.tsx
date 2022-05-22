@@ -1,8 +1,12 @@
 import { Button } from 'antd'
-import { useEthers, shortenAddress } from '@usedapp/core'
+import { useAccount, useConnect, useEnsName, useDisconnect } from 'wagmi'
 
 const Home = () => {
-  const { activateBrowserWallet, deactivate, account } = useEthers()
+  const { data: account } = useAccount()
+  const { data: ensName } = useEnsName({ address: account?.address })
+  const { connect, connectors } = useConnect()
+
+  const { disconnect } = useDisconnect()
 
   return (
     <div className="App p-4 lt-md:p-8 min-h-screen flex-col-center">
@@ -10,12 +14,12 @@ const Home = () => {
         <img src="https://zouhaha-blog-next.vercel.app/logo.png" alt="" className="w-32 rounded-full mb-10 shadow hover:shadow-blue-300" />
       </a>
       <p className="text-3xl font-bold underline hover:text-blue-300">Hello Vite + React + Antd Dapp!</p>
-      <p>{account && shortenAddress(account)}</p>
+      <p>{account?.address}</p>
       <p className="flex gap-4">
-        <Button type="primary" onClick={activateBrowserWallet} className="flex items-center">
+        <Button type="primary" onClick={() => connect(connectors[0])} className="flex items-center">
           connect <span className="i-carbon:chart-spiral"></span>
         </Button>
-        <Button type="primary" onClick={deactivate} className="flex items-center">
+        <Button type="primary" onClick={() => disconnect()} className="flex items-center">
           disconnect <span className="i-carbon:cookie"></span>
         </Button>
       </p>
