@@ -17,7 +17,11 @@
     "jsx": "react-jsx",
     "types": [
       "unplugin-icons/types/react"
-    ]
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]

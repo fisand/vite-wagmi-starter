@@ -1,3 +1,4 @@
+import { resolve } from 'path'
 import { defineConfig, splitVendorChunkPlugin } from 'vite'
 import Pages from 'vite-plugin-pages'
 import react from '@vitejs/plugin-react'
@@ -10,6 +11,11 @@ import EslintPlugin from 'vite-plugin-eslint'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  resolve: {
+    alias: {
+      '@/': `${resolve(__dirname, 'src')}/`,
+    },
+  },
   plugins: [
     react(),
     Icons({
