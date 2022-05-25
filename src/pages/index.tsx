@@ -16,6 +16,10 @@ const Home = () => {
     // watch: true,
   })
 
+  useEffect(() => {
+    console.log(account?.address)
+  }, [account])
+
   return (
     <div className="App p-4 lt-md:p-8 min-h-screen flex-col-center">
       <a href="https://github.com/zouhangwithsweet" target="_blank">

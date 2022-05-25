@@ -39,8 +39,29 @@ const BSCTest: Chain = {
   testnet: true,
 }
 
+const BSC: Chain = {
+  id: 56,
+  network: 'bsc',
+  name: 'Binance Smart Chain',
+  nativeCurrency: { name: 'BSC', symbol: 'BNB', decimals: 18 },
+  rpcUrls: {
+    default: 'https://bsc-mainnet.nodereal.io/v1/6100900f021e4eefb6a7d557996f4a23',
+  },
+  blockExplorers: {
+    etherscan: {
+      name: 'BNB Smart Chain Explorer',
+      url: 'https://bscscan.com',
+    },
+    default: {
+      name: 'BNB Smart Chain Explorer',
+      url: 'https://bscscan.com',
+    },
+  },
+  testnet: false,
+}
+
 const { chains, provider, webSocketProvider } = configureChains(
-  [chain.mainnet, chain.arbitrum, chain.polygon, BSCTest, chain.rinkeby],
+  [chain.mainnet, chain.arbitrum, chain.polygon, BSCTest, BSC, chain.rinkeby],
   [publicProvider()]
 )
 
