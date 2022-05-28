@@ -1,15 +1,15 @@
 import { resolve } from 'path'
-import { defineConfig, splitVendorChunkPlugin } from 'vite'
-import Pages from 'vite-plugin-pages'
+
 import react from '@vitejs/plugin-react'
 // import legacy from '@vitejs/plugin-legacy'
-import Icons from 'unplugin-icons/vite'
-import IconsResolver from 'unplugin-icons/resolver'
 import Unocss from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
+import IconsResolver from 'unplugin-icons/resolver'
+import Icons from 'unplugin-icons/vite'
+import { defineConfig, splitVendorChunkPlugin } from 'vite'
 import EslintPlugin from 'vite-plugin-eslint'
+import Pages from 'vite-plugin-pages'
 
-// https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
     alias: {
@@ -51,15 +51,11 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        // manualChunks(id) {
-        //   if (id.includes('antd') || id.includes('@antd') || id.includes('react') || id.includes('axios')) {
-        //     return 'antd-vendor'
-        //   } else if (id.includes('ethers')) {
-        //     return 'ethers-vendor'
-        //   } else if (id.includes('node_modules')) {
-        //     return 'vendor';
-        //   }
-        // },
+        manualChunks: {
+          'react-vendor': ['react', 'react-router-dom', 'react-dom', 'recoil', 'buffer'],
+          'eth-vendor': ['ethers', 'wagmi'],
+          'antd-vendor': ['antd', 'axios'],
+        },
       },
     },
   },

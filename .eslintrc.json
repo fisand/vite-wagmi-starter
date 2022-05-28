@@ -25,8 +25,22 @@
       "always"
     ],
     "import/order": [
-      "warn",
-      {}
+      "error",
+      {
+        "groups": [ "builtin", "external", "internal", "type" ],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["react"],
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
     ]
   }
 }

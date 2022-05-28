@@ -1,5 +1,7 @@
 import { Suspense, useEffect } from 'react'
+
 import { useRoutes, useNavigate } from 'react-router-dom'
+
 import routes from '~react-pages'
 
 function Redirect({ to }: { to: string }) {

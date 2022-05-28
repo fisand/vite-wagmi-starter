@@ -1,5 +1,5 @@
-import { useNetwork } from 'wagmi'
 import { Button } from 'antd'
+import { useNetwork } from 'wagmi'
 
 export function NetworkSwitcher() {
   const { activeChain, chains, error, isLoading, pendingChainId, switchNetwork } = useNetwork()
