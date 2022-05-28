@@ -45,6 +45,10 @@ export default defineConfig({
     preprocessorOptions: {
       less: {
         javascriptEnabled: true,
+        modifyVars: {
+          '@border-radius-base': '8px',
+          '@border-radius-sm': '4px',
+        }
       },
     },
   },
