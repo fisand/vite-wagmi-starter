@@ -7,6 +7,7 @@ import AutoImport from 'unplugin-auto-import/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 import Icons from 'unplugin-icons/vite'
 import { defineConfig, splitVendorChunkPlugin } from 'vite'
+import checker from 'vite-plugin-checker'
 import EslintPlugin from 'vite-plugin-eslint'
 import Pages from 'vite-plugin-pages'
 
@@ -18,6 +19,7 @@ export default defineConfig({
   },
   plugins: [
     react(),
+    checker({ typescript: true }),
     Icons({
       compiler: 'jsx',
       jsx: 'react',

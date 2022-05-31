@@ -1,6 +1,6 @@
 import { formatAmount } from '@did-network/dapp-sdk'
 import { Button } from 'antd'
-import { useAccount, useConnect, useDisconnect, useBalance } from 'wagmi'
+import { useAccount, useBalance } from 'wagmi'
 
 import { NetworkSwitcher } from '@/components/SwitchNetworks'
 import { WalletModal } from '@/components/WalletModal'
@@ -9,8 +9,6 @@ const Home = () => {
   const { data: account } = useAccount({
     suspense: undefined,
   })
-
-  const { disconnect } = useDisconnect()
 
   const { data: balance } = useBalance({
     addressOrName: account?.address,

@@ -41,6 +41,7 @@
     "unplugin-auto-import": "^0.7.1",
     "unplugin-icons": "^0.14.3",
     "vite": "^2.9.9",
+    "vite-plugin-checker": "^0.4.6",
     "vite-plugin-eslint": "^1.5.2",
     "vite-plugin-pages": "^0.22.0"
   },
