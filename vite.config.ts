@@ -2,6 +2,7 @@ import { resolve } from 'path'
 
 import react from '@vitejs/plugin-react'
 // import legacy from '@vitejs/plugin-legacy'
+import analyze from 'rollup-plugin-visualizer'
 import Unocss from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import IconsResolver from 'unplugin-icons/resolver'
@@ -39,6 +40,7 @@ export default defineConfig({
     }),
     EslintPlugin(),
     splitVendorChunkPlugin(),
+    analyze(),
     // legacy({
     //   targets: ['defaults', 'not IE 11'],
     // }),
