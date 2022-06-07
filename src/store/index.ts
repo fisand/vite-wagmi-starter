@@ -1,4 +1,4 @@
-import { atom } from 'recoil'
+import { atom } from 'jotai'
 
 export const textState = atom({
   key: 'textState', // unique ID (with respect to other atoms/selectors)

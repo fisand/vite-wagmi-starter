@@ -60,7 +60,7 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          'react-vendor': ['react', 'react-router-dom', 'react-dom', 'recoil', 'buffer'],
+          'react-vendor': ['react', 'react-router-dom', 'react-dom', 'buffer'],
           'eth-vendor': ['ethers', 'wagmi'],
           'antd-vendor': ['antd', 'axios'],
         },

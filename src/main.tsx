@@ -1,6 +1,5 @@
 import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
-import { RecoilRoot } from 'recoil'
 import { WagmiConfig, createClient, configureChains, chain } from 'wagmi'
 import { MetaMaskConnector } from 'wagmi/connectors/metaMask'
 import { WalletConnectConnector } from 'wagmi/connectors/walletConnect'
@@ -45,11 +44,9 @@ const client = createClient({
 
 ReactDOM.render(
   <WagmiConfig client={client}>
-    <RecoilRoot>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </RecoilRoot>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </WagmiConfig>,
   document.getElementById('root')
 )
