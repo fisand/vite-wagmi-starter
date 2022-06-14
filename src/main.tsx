@@ -1,15 +1,15 @@
 import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
-import { WagmiConfig, createClient, configureChains, chain } from 'wagmi'
+import { chain, configureChains, createClient, WagmiConfig } from 'wagmi'
 import { MetaMaskConnector } from 'wagmi/connectors/metaMask'
 import { WalletConnectConnector } from 'wagmi/connectors/walletConnect'
 import { publicProvider } from 'wagmi/providers/public'
 
-import App from './App'
 import { BSC, BSCTest } from '@/constants'
 
-import './assets/styles/index.less'
+import App from './App'
 
+import './assets/styles/index.less'
 import 'uno.css'
 import '@unocss/reset/normalize.css'
 

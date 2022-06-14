@@ -1,4 +1,4 @@
-import type { Chain } from "wagmi"
+import type { Chain } from 'wagmi'
 
 export const BSCTest: Chain = {
   id: 97,

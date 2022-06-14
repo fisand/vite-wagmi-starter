@@ -1,6 +1,6 @@
-import { Modal, Button } from 'antd'
-import { useAccount, useConnect, useDisconnect } from 'wagmi'
 import type { ModalProps } from 'antd'
+import { Button, Modal } from 'antd'
+import { useAccount, useConnect, useDisconnect } from 'wagmi'
 
 export function WalletModal(props: ModalProps) {
   const { connect, connectors, isConnecting, pendingConnector } = useConnect()

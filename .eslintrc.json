@@ -11,8 +11,13 @@
     "~icons/**/*.jsx"
   ],
   "extends": [
+    "plugin:prettier/recommended",
     "plugin:react-hooks/recommended",
     "plugin:import/warnings"
+  ],
+  "plugins": [
+    "simple-import-sort",
+    "import"
   ],
   "rules": {
     "react-hooks/rules-of-hooks": "error",
@@ -24,23 +29,28 @@
       0,
       "always"
     ],
-    "import/order": [
+    "simple-import-sort/imports": [
       "error",
       {
-        "groups": [ "builtin", "external", "internal", "type" ],
-        "pathGroups": [
-          {
-            "pattern": "react",
-            "group": "external",
-            "position": "before"
-          }
-        ],
-        "pathGroupsExcludedImportTypes": ["react"],
-        "alphabetize": {
-          "order": "asc",
-          "caseInsensitive": true
-        }
+        "groups": [
+          [
+            "^@?\\w"
+          ],
+          [
+            "^"
+          ],
+          [
+            "^\\."
+          ],
+          [
+            "^\\u0000"
+          ]
+        ]
       }
-    ]
+    ],
+    "simple-import-sort/exports": "error",
+    "import/first": "error",
+    "import/newline-after-import": "error",
+    "import/no-duplicates": "error"
   }
 }

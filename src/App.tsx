@@ -1,6 +1,5 @@
 import { Suspense, useEffect } from 'react'
-
-import { useRoutes, useNavigate } from 'react-router-dom'
+import { useNavigate, useRoutes } from 'react-router-dom'
 
 import routes from '~react-pages'
 
