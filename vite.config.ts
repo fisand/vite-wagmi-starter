@@ -1,14 +1,13 @@
-import { resolve } from 'path'
-
 import react from '@vitejs/plugin-react'
+import { resolve } from 'path'
 // import legacy from '@vitejs/plugin-legacy'
-import analyze from 'rollup-plugin-visualizer'
+import Analyze from 'rollup-plugin-visualizer'
 import Unocss from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 import Icons from 'unplugin-icons/vite'
 import { defineConfig, splitVendorChunkPlugin } from 'vite'
-import checker from 'vite-plugin-checker'
+import Checker from 'vite-plugin-checker'
 import EslintPlugin from 'vite-plugin-eslint'
 import Pages from 'vite-plugin-pages'
 
@@ -20,7 +19,7 @@ export default defineConfig({
   },
   plugins: [
     react(),
-    checker({ typescript: true }),
+    Checker({ typescript: true }),
     Icons({
       compiler: 'jsx',
       jsx: 'react',
@@ -40,7 +39,7 @@ export default defineConfig({
     }),
     EslintPlugin(),
     splitVendorChunkPlugin(),
-    analyze(),
+    Analyze(),
     // legacy({
     //   targets: ['defaults', 'not IE 11'],
     // }),
@@ -52,7 +51,7 @@ export default defineConfig({
         modifyVars: {
           '@border-radius-base': '8px',
           '@border-radius-sm': '4px',
-        }
+        },
       },
     },
   },
