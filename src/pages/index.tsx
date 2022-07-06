@@ -6,12 +6,10 @@ import { NetworkSwitcher } from '@/components/SwitchNetworks'
 import { WalletModal } from '@/components/WalletModal'
 
 const Home = () => {
-  const { data: account } = useAccount({
-    suspense: undefined,
-  })
+  const { address } = useAccount()
 
   const { data: balance } = useBalance({
-    addressOrName: account?.address,
+    addressOrName: address,
   })
 
   const [show, setShow] = useState(false)
@@ -31,11 +29,11 @@ const Home = () => {
       </a>
       <p className="text-3xl font-bold underline hover:text-blue-300">Hello Vite + React + Antd Dapp!</p>
       <p className="text-center">
-        {account?.address} <br /> {formatAmount(balance?.formatted)}
+        {address} <br /> {formatAmount(balance?.formatted)}
       </p>
       <p className="flex gap-4">
         <Button type="primary" onClick={() => setShow(true)} className="flex items-center">
-          {account ? 'disconnect' : 'connect'} <span className="i-carbon:cookie"></span>
+          {address ? 'disconnect' : 'connect'} <span className="i-carbon:cookie"></span>
         </Button>
       </p>
       <div>

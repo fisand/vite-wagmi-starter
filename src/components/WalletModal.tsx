@@ -3,15 +3,15 @@ import { Button, Modal } from 'antd'
 import { useAccount, useConnect, useDisconnect } from 'wagmi'
 
 export function WalletModal(props: ModalProps) {
-  const { connect, connectors, isConnecting, pendingConnector } = useConnect()
-  const { data: account } = useAccount()
+  const { connect, connectors, pendingConnector } = useConnect()
+  const { address, isConnecting } = useAccount()
   const { disconnect } = useDisconnect()
 
   return (
     <Modal title="Wallet" footer={null} {...props}>
-      {account ? (
+      {address ? (
         <>
-          <div className="flex-center my-3">{account.address}</div>
+          <div className="flex-center my-3">{address}</div>
           <Button
             size="large"
             type="primary"
@@ -34,7 +34,9 @@ export function WalletModal(props: ModalProps) {
               disabled={!connector.ready}
               key={connector.id}
               onClick={(e) => {
-                connect(connector)
+                connect({
+                  connector,
+                })
                 props.onCancel?.(e)
               }}
               className="w-full mb-3 rounded-lg h-12"
