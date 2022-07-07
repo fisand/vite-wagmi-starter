@@ -11,6 +11,10 @@ import Checker from 'vite-plugin-checker'
 import EslintPlugin from 'vite-plugin-eslint'
 import Pages from 'vite-plugin-pages'
 
+import unoConfig from './unocss.config'
+
+const theme = unoConfig.theme!
+
 export default defineConfig({
   resolve: {
     alias: {
@@ -51,6 +55,7 @@ export default defineConfig({
         modifyVars: {
           '@border-radius-base': '8px',
           '@border-radius-sm': '4px',
+          text: theme.colors.dark.DEFAULT,
         },
       },
     },
