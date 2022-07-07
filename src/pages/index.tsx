@@ -1,11 +1,13 @@
 import { formatAmount } from '@did-network/dapp-sdk'
 import { Button } from 'antd'
+import { useNavigate } from 'react-router-dom'
 import { useAccount, useBalance } from 'wagmi'
 
 import { NetworkSwitcher } from '@/components/SwitchNetworks'
 import { WalletModal } from '@/components/WalletModal'
 
 const Home = () => {
+  const navigator = useNavigate()
   const { address } = useAccount()
 
   const { data: balance } = useBalance({
@@ -47,6 +49,8 @@ const Home = () => {
         <a className="App-link" href="https://vitejs.dev/guide/features.html" target="_blank" rel="noopener noreferrer">
           Vite Docs
         </a>
+        {' | '}
+        <a onClick={() => navigator('/about')}>About</a>
       </p>
       <WalletModal visible={show} onCancel={onCancel} />
     </div>
