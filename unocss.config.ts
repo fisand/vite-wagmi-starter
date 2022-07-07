@@ -11,9 +11,7 @@ const config = {
   rules: [],
   theme: {
     colors: {
-      dark: {
-        DEFAULT: '#000',
-      },
+      primary: '#34E0A1',
     },
   },
 }

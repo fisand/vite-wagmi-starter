@@ -9,6 +9,7 @@ import Icons from 'unplugin-icons/vite'
 import { defineConfig, splitVendorChunkPlugin } from 'vite'
 import Checker from 'vite-plugin-checker'
 import EslintPlugin from 'vite-plugin-eslint'
+import Imp from 'vite-plugin-imp'
 import Pages from 'vite-plugin-pages'
 
 import unoConfig from './unocss.config'
@@ -43,6 +44,16 @@ export default defineConfig({
     }),
     EslintPlugin(),
     splitVendorChunkPlugin(),
+    Imp({
+      libList: [
+        {
+          libName: 'antd',
+          style(name) {
+            return `antd/es/${name}/style/index.js`
+          },
+        },
+      ],
+    }),
     Analyze(),
     // legacy({
     //   targets: ['defaults', 'not IE 11'],
@@ -55,7 +66,7 @@ export default defineConfig({
         modifyVars: {
           '@border-radius-base': '8px',
           '@border-radius-sm': '4px',
-          text: theme.colors.dark.DEFAULT,
+          '@primary-color': theme.colors.primary,
         },
       },
     },

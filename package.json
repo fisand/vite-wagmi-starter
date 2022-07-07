@@ -48,6 +48,7 @@
     "vite": "^2.9.13",
     "vite-plugin-checker": "^0.4.6",
     "vite-plugin-eslint": "^1.5.2",
+    "vite-plugin-imp": "^2.2.0",
     "vite-plugin-pages": "^0.22.0"
   },
   "repository": {
