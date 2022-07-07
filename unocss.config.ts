@@ -1,6 +1,6 @@
 import { defineConfig, presetIcons, presetUno, presetWind, UserConfig } from 'unocss'
 
-export default defineConfig({
+const config = {
   presets: [presetUno(), presetWind(), presetIcons()],
   shortcuts: [
     {
@@ -16,4 +16,6 @@ export default defineConfig({
       },
     },
   },
-})
+}
+
+export default defineConfig(config) as UserConfig<typeof config['theme']>
