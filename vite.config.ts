@@ -30,7 +30,7 @@ export default defineConfig({
       jsx: 'react',
     }),
     Pages({
-      exclude: ['**/![index.tsx]'],
+      exclude: ['**/!(index).tsx'],
     }),
     Unocss(),
     AutoImport({
