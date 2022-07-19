@@ -5,11 +5,11 @@ import { useAccount, useBalance } from 'wagmi'
 
 import { NetworkSwitcher } from '@/components/SwitchNetworks'
 import { WalletModal } from '@/components/WalletModal'
+import { useWagmi } from '@/hooks'
 
 const Home = () => {
   const navigator = useNavigate()
   const { address } = useAccount()
-
   const { data: balance } = useBalance({
     addressOrName: address,
   })
@@ -52,9 +52,20 @@ const Home = () => {
         {' | '}
         <a onClick={() => navigator('/about')}>About</a>
       </p>
+      <p>
+        {['', '', '', ''].map((_, index) => (
+          <Item key={index} />
+        ))}
+      </p>
       <WalletModal visible={show} onCancel={onCancel} />
     </div>
   )
 }
 
 export default Home
+
+function Item() {
+  const { status } = useWagmi()
+
+  return <span>{status}</span>
+}
