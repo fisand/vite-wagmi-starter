@@ -67,5 +67,5 @@ export default Home
 function Item() {
   const { status } = useWagmi()
 
-  return <span>{status}</span>
+  return <span></span>
 }
