@@ -31,9 +31,10 @@ export const useWagmi = () => {
     enabled: !!address,
   })
 
-  console.log(hunger?.toString(), getBoredom?.toString(), getAlive, loved?.toString())
-
   return {
+    getBoredom,
+    getAlive,
+    loved,
     status: hunger?.toString(),
   }
 }
