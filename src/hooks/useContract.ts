@@ -1,16 +1,13 @@
-import { Interface } from '@ethersproject/abi'
 import { allChains, chainId, useNetwork } from 'wagmi'
 
 import WAGMI_ABI from './abi/Wagmi.json'
-
-const WAGMI_ABI_INTERFACE = new Interface(WAGMI_ABI)
 
 export const useWagmiContract = () => {
   const address = useWagmiContractAddress()
   return useMemo(
     () => ({
       addressOrName: address!,
-      contractInterface: WAGMI_ABI_INTERFACE,
+      contractInterface: WAGMI_ABI,
     }),
     [address]
   )
