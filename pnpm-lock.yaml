@@ -14,7 +14,6 @@ specifiers:
   '@vitejs/plugin-react': ^2.0.0
   antd: ^4.19.2
   axios: ^0.26.1
-  buffer: ^6.0.3
   eslint: ^8.14.0
   eslint-config-prettier: ^8.5.0
   eslint-config-react-app: ^7.0.1
@@ -48,7 +47,6 @@ dependencies:
   '@unocss/reset': 0.43.2
   antd: 4.20.6_sfoxds7t5ydpegc3knd667wn6m
   axios: 0.26.1
-  buffer: 6.0.3
   ethers: 5.6.8
   jotai: 1.7.1_react@17.0.2
   react: 17.0.2
