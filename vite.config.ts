@@ -13,6 +13,7 @@ import Imp from 'vite-plugin-imp'
 import Pages from 'vite-plugin-pages'
 
 import unoConfig from './unocss.config'
+import { wagmiExports } from './wagmi.exports'
 
 const theme = unoConfig.theme!
 
@@ -40,7 +41,12 @@ export default defineConfig(({ mode }) => {
       }),
       Unocss(),
       AutoImport({
-        imports: ['react'],
+        imports: [
+          'react',
+          // {
+          //   wagmi: wagmiExports,
+          // },
+        ],
         dts: './src/auto-imports.d.ts',
         resolvers: [
           IconsResolver({
@@ -81,7 +87,7 @@ export default defineConfig(({ mode }) => {
       rollupOptions: {
         output: {
           manualChunks: {
-            'react-vendor': ['react', 'react-router-dom', 'react-dom', 'buffer'],
+            'react-vendor': ['react', 'react-router-dom', 'react-dom'],
             'eth-vendor': ['ethers', 'wagmi'],
             'antd-vendor': ['antd', 'axios'],
           },
