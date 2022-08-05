@@ -21,7 +21,14 @@ const Home = () => {
   }
 
   return (
-    <div className="App p-4 lt-md:p-8 min-h-screen flex-col-center">
+    <div className="App relative p-4 lt-md:p-8 min-h-screen flex-col-center">
+      <a
+        href="https://github.com/fisand/vite-antd-seed"
+        target="_blank"
+        className="absolute top-6 right-10 text-#aaa hover:text-black"
+      >
+        <span className="inline-flex w-8 h-8 i-carbon:logo-github"></span>
+      </a>
       <a href="https://github.com/zouhangwithsweet" target="_blank">
         <img
           src="https://zouhaha-blog-next.vercel.app/logo.png"
