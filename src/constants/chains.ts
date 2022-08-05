@@ -18,6 +18,10 @@ export const BSCTest: Chain = {
       url: 'https://testnet.bscscan.com',
     },
   },
+  multicall: {
+    address: '0x6e5BB1a5Ad6F68A8D7D6A5e47750eC15773d6042',
+    blockCreated: 1802960,
+  },
   testnet: true,
 }
 
@@ -38,6 +42,10 @@ export const BSC: Chain = {
       name: 'BNB Smart Chain Explorer',
       url: 'https://bscscan.com',
     },
+  },
+  multicall: {
+    address: '0xC50F4c1E81c873B2204D7eFf7069Ffec6Fbe136D',
+    blockCreated: 9316063,
   },
   testnet: false,
 }
