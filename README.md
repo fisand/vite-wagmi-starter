@@ -1,5 +1,5 @@
-# vite-antd-seed
-vite + react + antd + ts
+# vite-wagmi-dapp-seed
+vite + react + wagmi + ts
 
 ## Features
 
