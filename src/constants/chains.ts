@@ -20,8 +20,8 @@ export const BSCTest: Chain = {
   },
   // todo confirm ?
   multicall: {
-    address: '0x73CCde5acdb9980f54BcCc0483B28B8b4a537b4A',
-    blockCreated: 21763945,
+    address: '0xae11C5B5f29A6a25e955F0CB8ddCc416f522AF5C',
+    blockCreated: 4613947,
   },
   testnet: true,
 }
@@ -45,8 +45,8 @@ export const BSC: Chain = {
     },
   },
   multicall: {
-    address: '0xC50F4c1E81c873B2204D7eFf7069Ffec6Fbe136D',
-    blockCreated: 9316063,
+    address: '0x41263cba59eb80dc200f3e2544eda4ed6a90e76c',
+    blockCreated: 6564393,
   },
   testnet: false,
 }
