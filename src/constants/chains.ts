@@ -18,6 +18,7 @@ export const BSCTest: Chain = {
       url: 'https://testnet.bscscan.com',
     },
   },
+  // todo confirm ?
   multicall: {
     address: '0x73CCde5acdb9980f54BcCc0483B28B8b4a537b4A',
     blockCreated: 21763945,
