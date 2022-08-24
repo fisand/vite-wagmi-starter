@@ -19,8 +19,8 @@ export const BSCTest: Chain = {
     },
   },
   multicall: {
-    address: '0x6e5BB1a5Ad6F68A8D7D6A5e47750eC15773d6042',
-    blockCreated: 1802960,
+    address: '0x73CCde5acdb9980f54BcCc0483B28B8b4a537b4A',
+    blockCreated: 21763945,
   },
   testnet: true,
 }
