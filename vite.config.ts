@@ -12,7 +12,7 @@ import EslintPlugin from 'vite-plugin-eslint'
 import Imp from 'vite-plugin-imp'
 import Pages from 'vite-plugin-pages'
 
-import unoConfig from './unocss.config'
+import unoConfig from './uno.config'
 import { wagmiExports } from './wagmi.exports'
 
 const theme = unoConfig.theme!
