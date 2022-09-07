@@ -36,7 +36,7 @@ const Home = () => {
           className="w-32 rounded-full mb-10 shadow hover:shadow-blue-300"
         />
       </a>
-      <p className="text-3xl font-bold underline hover:text-blue-300">Hello Vite + React + Antd Dapp!</p>
+      <p className="text-3xl font-bold underline hover:text-blue-300">Hello Vite + React + Wagmi Dapp!</p>
       <p className="text-center">
         {address} <br /> {formatAmount(balance?.formatted)}
       </p>

@@ -1,7 +1,7 @@
 {
-  "name": "vite-antd-seed",
+  "name": "vite-wagmi-seed",
   "version": "0.0.0",
-  "description": "vite antd starter",
+  "description": "vite wagmi starter",
   "main": "index.js",
   "scripts": {
     "dev": "vite",
@@ -55,7 +55,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zouhangwithsweet/vite-antd-seed.git"
+    "url": "git+https://github.com/fisand/vite-wagmi-seed.git"
   },
   "keywords": [
     "vite",
@@ -65,7 +65,7 @@
   "author": "zouhang",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/zouhangwithsweet/vite-antd-seed/issues"
+    "url": "https://github.com/fisand/vite-wagmi-seed/issues"
   },
-  "homepage": "https://github.com/zouhangwithsweet/vite-antd-seed#readme"
+  "homepage": "https://github.com/fisand/vite-wagmi-seed#readme"
 }
