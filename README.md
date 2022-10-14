@@ -26,12 +26,21 @@ dev
 pnpm run dev
 ```
 
-## Features
+## Profile
 
 - 😏 **Vite** for dev/build
 - 😏 **wagmi** for web3 hook
 - 😏 **Unocss** for CSS
 - 😏 **Vercel** for preview
+
+## Features
+
+- File system router
+- AutoImport API
+- TypeScript Checker & Eslint
+- Custom Icon import by `unocss`
+- Tree shaking module
+- built in actions `.yml`
 
 ## Credits
 
