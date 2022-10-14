@@ -10,7 +10,7 @@ click `Use this template`
 
 For now, most of dapps frontend ecosystem were build on webpack and react. The most popular tool is `CRA`. As we know, the dev experience of webpack is not very good by codes growing.
 
-`Vite` is the next generation frontend tooling. It's fast and more easily to use. So I build the project for dapps DX improvisation.
+`Vite` is the next generation frontend tooling. It's fast and more easily to use. So I build the project for dapps DX improvement.
 
 ## Dev
 
