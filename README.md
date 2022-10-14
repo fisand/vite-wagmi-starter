@@ -35,12 +35,12 @@ pnpm run dev
 
 ## Features
 
-- File system router
-- AutoImport API
-- TypeScript Checker & Eslint
-- Custom Icon import by `unocss`
-- Tree shaking module
-- built in actions `.yml`
+- 🌲 File system router
+- 🏎️ AutoImport API
+- 🛡️ TypeScript Checker & Eslint
+- ✨ Custom Icon import by `unocss`
+- 🍂 Tree shaking module
+- 🚠 built in actions `.yml`
 
 ## Credits
 
