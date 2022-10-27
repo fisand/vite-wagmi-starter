@@ -1,5 +1,7 @@
 # vite-wagmi-dapp-starer
 
+![v](https://img.shields.io/badge/vite-v3.1.8-brightgreen) ![w](https://img.shields.io/badge/wagmi-v0.7.7-brightgreen)  
+
 💖 power by vite + react + wagmi + ts
 
 ## QuickStart
