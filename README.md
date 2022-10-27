@@ -46,5 +46,5 @@ pnpm run dev
 
 ## Credits
 
-- Vite
-- wagmi
+- [Vite](https://vitejs.dev/)
+- [wagmi](https://wagmi.sh/)
