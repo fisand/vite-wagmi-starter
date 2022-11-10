@@ -6,7 +6,7 @@ export const useWagmiContract = () => {
   const address = useWagmiContractAddress()
   return useMemo(
     () => ({
-      addressOrName: address!,
+      address: address!,
       contractInterface: WAGMI_ABI,
     }),
     [address]
@@ -20,7 +20,7 @@ export const useWagmiContractAddress = () => {
     () =>
       ({
         [chainId.mainnet]: '0xecb504d39723b0be0e3a9aa33d646642d1051ee1',
-        [chainId.rinkeby]: '0xecb504d39723b0be0e3a9aa33d646642d1051ee1',
+        [chainId.goerli]: '0xecb504d39723b0be0e3a9aa33d646642d1051ee1',
       }[chain.id]),
     [chain]
   )

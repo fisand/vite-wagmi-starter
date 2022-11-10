@@ -17,7 +17,7 @@ import '@unocss/reset/normalize.css'
 console.table(import.meta.env)
 
 const { chains, provider, webSocketProvider } = configureChains(
-  [chain.mainnet, chain.arbitrum, chain.polygon, BSCTest, BSC, chain.rinkeby],
+  [chain.mainnet, chain.arbitrum, chain.polygon, BSCTest, BSC, chain.goerli],
   [
     // publicProvider(),
     jsonRpcProvider({

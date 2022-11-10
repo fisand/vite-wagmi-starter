@@ -11,7 +11,7 @@ const Home = () => {
   const navigator = useNavigate()
   const { address } = useAccount()
   const { data: balance } = useBalance({
-    addressOrName: address,
+    address,
   })
 
   const [show, setShow] = useState(false)
