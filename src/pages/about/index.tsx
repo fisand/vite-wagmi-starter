@@ -13,7 +13,7 @@ const About = () => {
           <Form.Item name="Description" rules={[{ required: true }]} labelCol={{ span: 24, offset: 0 }}>
             <div>
               <div className="mb-2.5 text-black font-bold">1. Description</div>
-              <Input />
+              <Input className="h-11" />
             </div>
           </Form.Item>
           <Form.Item name="Rules" rules={[{ required: true }]}>
@@ -54,7 +54,7 @@ function NestInput({ onChange }: { onChange?: (res: string[], num: number) => vo
       <Select
         defaultValue={2}
         size="large"
-        className="mt-2.5 w-full h-11"
+        className="w-full h-11"
         onChange={(e) => {
           setNum(e)
         }}

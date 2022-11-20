@@ -71,18 +71,6 @@ export default defineConfig(({ mode }) => {
       //   targets: ['defaults', 'not IE 11'],
       // }),
     ],
-    css: {
-      preprocessorOptions: {
-        less: {
-          javascriptEnabled: true,
-          modifyVars: {
-            '@border-radius-base': '8px',
-            '@border-radius-sm': '4px',
-            '@primary-color': theme.colors.primary,
-          },
-        },
-      },
-    },
     build: {
       rollupOptions: {
         output: {

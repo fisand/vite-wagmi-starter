@@ -64,7 +64,7 @@ const Home = () => {
           <Item key={index} />
         ))}
       </p>
-      <WalletModal visible={show} onCancel={onCancel} />
+      <WalletModal open={show} onCancel={onCancel} />
     </div>
   )
 }

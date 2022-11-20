@@ -1,3 +1,4 @@
+import { ConfigProvider } from 'antd'
 import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
 import { chain, configureChains, createClient, WagmiConfig } from 'wagmi'
@@ -10,7 +11,8 @@ import { BSC, BSCTest } from '@/constants'
 
 import App from './App'
 
-import './assets/styles/index.less'
+import './index.css'
+import 'antd/dist/reset.css'
 import 'uno.css'
 import '@unocss/reset/normalize.css'
 
@@ -55,7 +57,15 @@ const client = createClient({
 ReactDOM.render(
   <WagmiConfig client={client}>
     <BrowserRouter>
-      <App />
+      <ConfigProvider
+        theme={{
+          token: {
+            colorPrimary: '#00b96b',
+          },
+        }}
+      >
+        <App />
+      </ConfigProvider>
     </BrowserRouter>
   </WagmiConfig>,
   document.getElementById('root')
