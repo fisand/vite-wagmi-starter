@@ -1,13 +1,12 @@
 import { ConfigProvider } from 'antd'
 import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
-import { chain, configureChains, createClient, WagmiConfig } from 'wagmi'
+import { configureChains, createClient, WagmiConfig } from 'wagmi'
+import { arbitrum, arbitrumGoerli, bsc, bscTestnet, goerli, mainnet, polygon } from 'wagmi/chains'
 import { MetaMaskConnector } from 'wagmi/connectors/metaMask'
 import { WalletConnectConnector } from 'wagmi/connectors/walletConnect'
 import { jsonRpcProvider } from 'wagmi/providers/jsonRpc'
 import { publicProvider } from 'wagmi/providers/public'
-
-import { BSC, BSCTest } from '@/constants'
 
 import App from './App'
 
@@ -19,13 +18,13 @@ import '@unocss/reset/normalize.css'
 console.table(import.meta.env)
 
 const { chains, provider, webSocketProvider } = configureChains(
-  [chain.mainnet, chain.arbitrum, chain.polygon, BSCTest, BSC, chain.goerli],
+  [arbitrum, arbitrumGoerli, bsc, bscTestnet, mainnet, polygon, goerli],
   [
     // publicProvider(),
     jsonRpcProvider({
       rpc: (chain) => {
         if (chain.id !== 97 && chain.id !== 56) return null
-        return { http: chain.rpcUrls.default }
+        return { http: chain.rpcUrls.default.http[0] }
       },
     }),
     publicProvider(),
