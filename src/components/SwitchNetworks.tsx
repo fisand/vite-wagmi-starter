@@ -15,7 +15,7 @@ export function NetworkSwitcher() {
       </div>
 
       {switchNetwork && (
-        <div className="flex gap-2 mt-3">
+        <div className="flex gap-2 flex-wrap mt-3">
           {chains.map((x) =>
             x.id === chain?.id ? null : (
               <Button
