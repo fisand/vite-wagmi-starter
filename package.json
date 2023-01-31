@@ -67,5 +67,10 @@
   "bugs": {
     "url": "https://github.com/fisand/vite-wagmi-seed/issues"
   },
-  "homepage": "https://github.com/fisand/vite-wagmi-seed#readme"
+  "homepage": "https://github.com/fisand/vite-wagmi-seed#readme",
+  "pnpm": {
+    "overrides": {
+      "ethereumjs-abi": "https://codeload.github.com/ethereumjs/ethereumjs-abi/tar.gz/ee3994657fa7a427238e6ba92a84d0b529bbcde0"
+    }
+  }
 }
