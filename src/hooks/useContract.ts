@@ -7,7 +7,7 @@ export const useWagmiContract = () => {
   const address = useWagmiContractAddress()
   return useMemo(
     () => ({
-      address: address!,
+      address: address! as `0x${string}`,
       contractInterface: WAGMI_ABI,
     }),
     [address]

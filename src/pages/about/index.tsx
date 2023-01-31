@@ -88,7 +88,7 @@ function NestInput({ onChange }: { onChange?: (res: string[], num: number) => vo
               </div>
             </div>
           ))}
-        <span className="block absolute top-0 -translate-y-5.5 h-full border-l border-gray"></span>
+        <span className="block absolute top-0 -translate-y-5.5 h-full border-l border-l-solid border-gray"></span>
       </div>
     </div>
   )

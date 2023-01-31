@@ -1,5 +1,5 @@
 import { ConfigProvider } from 'antd'
-import ReactDOM from 'react-dom'
+import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import { configureChains, createClient, WagmiConfig } from 'wagmi'
 import { arbitrum, arbitrumGoerli, bsc, bscTestnet, goerli, mainnet, polygon } from 'wagmi/chains'
@@ -53,7 +53,25 @@ const client = createClient({
   webSocketProvider,
 })
 
-ReactDOM.render(
+// ReactDOM.render(
+//   <WagmiConfig client={client}>
+//     <BrowserRouter>
+//       <ConfigProvider
+//         theme={{
+//           token: {
+//             colorPrimary: '#00b96b',
+//           },
+//         }}
+//       >
+//         <App />
+//       </ConfigProvider>
+//     </BrowserRouter>
+//   </WagmiConfig>,
+//   document.getElementById('root')
+// )
+
+const root = createRoot(document.getElementById('root')!)
+root.render(
   <WagmiConfig client={client}>
     <BrowserRouter>
       <ConfigProvider
@@ -66,6 +84,5 @@ ReactDOM.render(
         <App />
       </ConfigProvider>
     </BrowserRouter>
-  </WagmiConfig>,
-  document.getElementById('root')
+  </WagmiConfig>
 )

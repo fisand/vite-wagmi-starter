@@ -17,7 +17,7 @@ export function WalletModal(props: ModalProps) {
             type="primary"
             onClick={(e) => {
               disconnect()
-              props.onCancel?.(e)
+              props.onCancel?.(e as any)
             }}
             className="flex-center w-full"
           >
@@ -37,7 +37,7 @@ export function WalletModal(props: ModalProps) {
                 connect({
                   connector,
                 })
-                props.onCancel?.(e)
+                props.onCancel?.(e as any)
               }}
               className="w-full mb-3 rounded-lg h-12"
             >
