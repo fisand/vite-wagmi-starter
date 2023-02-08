@@ -55,17 +55,17 @@ export default defineConfig(({ mode }) => {
         ],
       }),
       EslintPlugin(),
-      splitVendorChunkPlugin(),
-      Imp({
-        libList: [
-          {
-            libName: 'antd',
-            style(name) {
-              return `antd/es/${name}/style/index.js`
-            },
-          },
-        ],
-      }),
+      // splitVendorChunkPlugin(),
+      // Imp({
+      //   libList: [
+      //     {
+      //       libName: 'antd',
+      //       style(name) {
+      //         return `antd/es/${name}/style/index.js`
+      //       },
+      //     },
+      //   ],
+      // }),
       Analyze(),
       // legacy({
       //   targets: ['defaults', 'not IE 11'],
@@ -76,8 +76,8 @@ export default defineConfig(({ mode }) => {
         output: {
           manualChunks: {
             'react-vendor': ['react', 'react-router-dom', 'react-dom'],
-            'eth-vendor': ['ethers', 'wagmi'],
-            'ui-vendor': ['antd', 'axios'],
+            'eth-vendor': ['ethers'],
+            'ui-vendor': ['antd', 'wagmi'],
           },
         },
       },
