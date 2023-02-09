@@ -6,16 +6,10 @@ import Unocss from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 import Icons from 'unplugin-icons/vite'
-import { defineConfig, loadEnv, splitVendorChunkPlugin } from 'vite'
+import { defineConfig, loadEnv } from 'vite'
 import Checker from 'vite-plugin-checker'
 import EslintPlugin from 'vite-plugin-eslint'
-import Imp from 'vite-plugin-imp'
 import Pages from 'vite-plugin-pages'
-
-import unoConfig from './uno.config'
-import { wagmiExports } from './wagmi.exports'
-
-const theme = unoConfig.theme!
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
@@ -55,17 +49,6 @@ export default defineConfig(({ mode }) => {
         ],
       }),
       EslintPlugin(),
-      // splitVendorChunkPlugin(),
-      // Imp({
-      //   libList: [
-      //     {
-      //       libName: 'antd',
-      //       style(name) {
-      //         return `antd/es/${name}/style/index.js`
-      //       },
-      //     },
-      //   ],
-      // }),
       Analyze(),
       // legacy({
       //   targets: ['defaults', 'not IE 11'],

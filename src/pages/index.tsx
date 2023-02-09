@@ -57,7 +57,9 @@ const Home = () => {
           Vite Docs
         </a>
         {' | '}
-        <a onClick={() => navigator('/about')}>About</a>
+        <a className="App-link cursor-pointer underline underline-current" onClick={() => navigator('/about')}>
+          About
+        </a>
       </p>
       <p>
         {['', '', '', ''].map((_, index) => (

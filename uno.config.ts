@@ -16,4 +16,4 @@ const config = {
   },
 }
 
-export default defineConfig(config) as UserConfig<typeof config['theme']>
+export default defineConfig(config) as UserConfig<(typeof config)['theme']>
