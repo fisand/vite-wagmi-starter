@@ -4,6 +4,8 @@
 
 💖 power by vite + react + wagmi + ts
 
+preview [demo](https://vite-antd-seed.vercel.app/)
+
 ## QuickStart
 
 click `Use this template`
