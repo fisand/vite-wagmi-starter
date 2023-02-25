@@ -12,8 +12,8 @@ import App from './App'
 
 import './index.css'
 import 'antd/dist/reset.css'
-import 'uno.css'
 import '@unocss/reset/normalize.css'
+import 'uno.css'
 
 console.table(import.meta.env)
 
