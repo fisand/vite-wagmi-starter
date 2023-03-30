@@ -9,8 +9,8 @@ import Icons from 'unplugin-icons/vite'
 import { defineConfig, loadEnv } from 'vite'
 import Checker from 'vite-plugin-checker'
 import EslintPlugin from 'vite-plugin-eslint'
-import Pages from 'vite-plugin-pages'
 import nodePolyfills from 'vite-plugin-node-stdlib-browser'
+import Pages from 'vite-plugin-pages'
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
