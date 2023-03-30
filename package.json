@@ -17,6 +17,7 @@
     "buffer": "^6.0.3",
     "ethers": "^5.7.2",
     "jotai": "^1.13.1",
+    "node-stdlib-browser": "^1.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router": "^6.8.0",
@@ -50,6 +51,7 @@
     "vite": "^4.2.1",
     "vite-plugin-checker": "^0.5.5",
     "vite-plugin-eslint": "^1.8.1",
+    "vite-plugin-node-stdlib-browser": "^0.2.1",
     "vite-plugin-pages": "^0.28.0"
   },
   "repository": {

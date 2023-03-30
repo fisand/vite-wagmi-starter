@@ -10,6 +10,7 @@ import { defineConfig, loadEnv } from 'vite'
 import Checker from 'vite-plugin-checker'
 import EslintPlugin from 'vite-plugin-eslint'
 import Pages from 'vite-plugin-pages'
+import nodePolyfills from 'vite-plugin-node-stdlib-browser'
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
@@ -50,6 +51,7 @@ export default defineConfig(({ mode }) => {
       }),
       EslintPlugin(),
       Analyze(),
+      nodePolyfills(),
       // legacy({
       //   targets: ['defaults', 'not IE 11'],
       // }),
