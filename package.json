@@ -22,7 +22,7 @@
     "react-dom": "^18.2.0",
     "react-router": "^6.8.0",
     "react-router-dom": "^6.8.0",
-    "wagmi": "^0.12.1"
+    "wagmi": "^0.12.10"
   },
   "devDependencies": {
     "@iconify-json/carbon": "^1.1.14",
