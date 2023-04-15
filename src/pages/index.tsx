@@ -30,11 +30,7 @@ const Home = () => {
         <span className="inline-flex w-8 h-8 i-carbon:logo-github"></span>
       </a>
       <a href="https://github.com/zouhangwithsweet" target="_blank">
-        <img
-          src="https://zouhaha-blog-next.vercel.app/logo.png"
-          alt=""
-          className="w-32 rounded-full mb-10 shadow hover:shadow-blue-300"
-        />
+        <img src="/logo.png" alt="" className="w-32 rounded-full mb-10 shadow hover:shadow-blue-300" />
       </a>
       <p className="text-3xl font-bold underline hover:text-blue-300">Hello Vite + React + Wagmi Dapp!</p>
       <p className="text-center">
