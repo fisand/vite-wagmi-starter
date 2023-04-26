@@ -1,53 +1,65 @@
-import type { ModalProps } from 'antd'
-import { Button, Modal } from 'antd'
+import { shorten } from '@did-network/dapp-sdk'
+import { ReactNode } from 'react'
+import { Button } from 'uno-ui/src/components/ui/button'
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from 'uno-ui/src/components/ui/dialog'
 import { useAccount, useConnect, useDisconnect } from 'wagmi'
 
-export function WalletModal(props: ModalProps) {
+export function WalletModal(props: { children: ReactNode }) {
   const { connect, connectors, pendingConnector } = useConnect()
   const { address, isConnecting } = useAccount()
   const { disconnect } = useDisconnect()
 
   return (
-    <Modal title="Wallet" footer={null} {...props}>
-      {address ? (
-        <>
-          <div className="flex-center my-3">{address}</div>
-          <Button
-            size="large"
-            type="primary"
-            onClick={(e) => {
-              disconnect()
-              props.onCancel?.(e as any)
-            }}
-            className="flex-center w-full"
-          >
-            disconnect <span className="i-carbon:cookie"></span>
-          </Button>
-        </>
-      ) : (
-        <div className="flex-col-center">
-          {connectors.map((connector) => (
-            <Button
-              ghost
-              size="large"
-              type="primary"
-              disabled={!connector.ready}
-              key={connector.id}
-              onClick={(e) => {
-                connect({
-                  connector,
-                })
-                props.onCancel?.(e as any)
-              }}
-              className="w-full mb-3 rounded-lg h-12"
-            >
-              {connector.name}
-              {!connector.ready && ' (unsupported)'}
-              {isConnecting && connector.id === pendingConnector?.id && ' (connecting)'}
-            </Button>
-          ))}
+    <Dialog>
+      <DialogTrigger asChild>{props.children}</DialogTrigger>
+      <DialogContent className="sm:max-w-[425px] md:top-30">
+        <DialogHeader>
+          <DialogTitle>Wallet</DialogTitle>
+          <DialogDescription>connect to web3.</DialogDescription>
+        </DialogHeader>
+        <div className="w-full">
+          {address ? (
+            <>
+              <div className="flex-center my-3">{shorten(address)}</div>
+              <Button
+                onClick={(e) => {
+                  disconnect()
+                }}
+                className="flex-center w-full"
+              >
+                disconnect <span className="i-carbon:cookie"></span>
+              </Button>
+            </>
+          ) : (
+            <div className="flex-col-center">
+              {connectors.map((connector) => (
+                <Button
+                  disabled={!connector.ready}
+                  key={connector.id}
+                  onClick={(e) => {
+                    connect({
+                      connector,
+                    })
+                  }}
+                  className="w-full mb-3 rounded-lg h-12"
+                >
+                  {connector.name}
+                  {!connector.ready && ' (unsupported)'}
+                  {isConnecting && connector.id === pendingConnector?.id && ' (connecting)'}
+                </Button>
+              ))}
+            </div>
+          )}
         </div>
-      )}
-    </Modal>
+      </DialogContent>
+    </Dialog>
   )
 }

@@ -1,4 +1,4 @@
-import { Button } from 'antd'
+import { Button } from 'uno-ui/src/components/ui/button'
 import { useNetwork, useSwitchNetwork } from 'wagmi'
 
 export function NetworkSwitcher() {
@@ -18,13 +18,10 @@ export function NetworkSwitcher() {
         <div className="flex gap-2 flex-wrap mt-3">
           {chains.map((x) =>
             x.id === chain?.id ? null : (
-              <Button
-                loading={isLoading && x.id === pendingChainId}
-                ghost
-                type="primary"
-                key={x.id}
-                onClick={() => switchNetwork(x.id)}
-              >
+              <Button key={x.id} onClick={() => switchNetwork(x.id)}>
+                {isLoading && x.id === pendingChainId && (
+                  <span className="i-line-md:loading-twotone-loop inline-flex w-4 h-4 text-white"></span>
+                )}{' '}
                 {x.name}
               </Button>
             )

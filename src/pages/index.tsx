@@ -1,6 +1,6 @@
 import { formatAmount } from '@did-network/dapp-sdk'
-import { Button } from 'antd'
 import { useNavigate } from 'react-router-dom'
+import { Button } from 'uno-ui/src/components/ui/button'
 import { useAccount, useBalance } from 'wagmi'
 
 import { NetworkSwitcher } from '@/components/SwitchNetworks'
@@ -37,9 +37,11 @@ const Home = () => {
         {address} <br /> {formatAmount(balance?.formatted)}
       </p>
       <p className="flex gap-4">
-        <Button type="primary" onClick={() => setShow(true)} className="flex items-center">
-          {address ? 'disconnect' : 'connect'} <span className="i-carbon:cookie"></span>
-        </Button>
+        <WalletModal>
+          <Button onClick={() => setShow(true)} className="flex items-center">
+            {address ? 'disconnect' : 'connect'} <span className="i-carbon:cookie"></span>
+          </Button>
+        </WalletModal>
       </p>
       <div>
         <NetworkSwitcher />
@@ -62,7 +64,6 @@ const Home = () => {
           <Item key={index} />
         ))}
       </p>
-      <WalletModal open={show} onCancel={onCancel} />
     </div>
   )
 }
