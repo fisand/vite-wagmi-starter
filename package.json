@@ -28,6 +28,7 @@
   "devDependencies": {
     "@iconify-json/carbon": "^1.1.14",
     "@iconify-json/line-md": "^1.1.24",
+    "@iconify-json/logos": "^1.1.25",
     "@iconify-json/lucide": "^1.1.83",
     "@svgr/core": "^6.5.1",
     "@types/node": "^18.15.11",
