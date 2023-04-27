@@ -12,18 +12,23 @@ import {
 } from 'uno-ui/src/components/ui/dialog'
 import { useAccount, useConnect, useDisconnect } from 'wagmi'
 
-export function WalletModal(props: { children: ReactNode }) {
+export function WalletModal(props: {
+  children: ReactNode
+  open: boolean
+  onOpenChange: (open: boolean) => void
+  close?: () => void
+}) {
   const { connect, connectors, pendingConnector } = useConnect()
   const { address, isConnecting } = useAccount()
   const { disconnect } = useDisconnect()
 
   return (
-    <Dialog>
+    <Dialog open={props.open} onOpenChange={props.onOpenChange}>
       <DialogTrigger asChild>{props.children}</DialogTrigger>
       <DialogContent className="sm:max-w-[425px] md:top-30">
         <DialogHeader>
           <DialogTitle>Wallet</DialogTitle>
-          <DialogDescription>connect to web3.</DialogDescription>
+          <DialogDescription>connect to web3</DialogDescription>
         </DialogHeader>
         <div className="w-full">
           {address ? (
@@ -32,6 +37,7 @@ export function WalletModal(props: { children: ReactNode }) {
               <Button
                 onClick={(e) => {
                   disconnect()
+                  props.close?.()
                 }}
                 className="flex-center w-full"
               >
@@ -48,6 +54,7 @@ export function WalletModal(props: { children: ReactNode }) {
                     connect({
                       connector,
                     })
+                    props.close?.()
                   }}
                   className="w-full mb-3 rounded-lg h-12"
                 >
