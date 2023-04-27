@@ -51,7 +51,7 @@ const Home = () => {
       />
       <div className="relative max-w-6xl min-h-[calc(100vh-8rem)] m-auto pt-16 flex-col-center justify-start">
         <p
-          className="font-bold bg-clip-text text-4xl"
+          className="font-bold bg-clip-text text-4xl lt-sm:text-2xl"
           style={
             {
               backgroundImage: 'linear-gradient(270deg, #B4EAA1 0%, #F8D07A 100%)',
@@ -63,8 +63,8 @@ const Home = () => {
         >
           Unoi Dapp Template
         </p>
-        <p className="mt-3 text-5xl text-center font-bold">The better template to launch a Web3 dapp</p>
-        <p className="mt-3 text-3xl group">
+        <p className="mt-3 text-5xl text-center font-bold lt-sm:text-3xl">The better template to launch a Web3 dapp</p>
+        <p className="mt-3 text-3xl text-center lt-sm:text-xl group">
           Designed for everyone. Built with wagmi{' '}
           <span className="i-logos:vitejs inline-flex w-5 h-5 -group-hover:rotate-30 transition-all" />{' '}
           <span className="i-logos:unocss inline-flex w-5 h-5 group-hover:rotate-23 transition-all" />.
