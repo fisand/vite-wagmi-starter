@@ -6,6 +6,9 @@
 
 preview [demo](https://vite-antd-seed.vercel.app/)
 
+<img width="100%" alt="image" src="https://user-images.githubusercontent.com/21095710/234826388-de4d17b7-e6f2-4fa5-926c-c8fa527f7ef9.png">
+
+
 ## QuickStart
 
 click `Use this template`
