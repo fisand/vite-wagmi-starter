@@ -1,4 +1,4 @@
-# vite-wagmi-dapp-starer
+# unoi
 
 ![v](https://img.shields.io/badge/vite-v4.3.1-brightgreen) ![w](https://img.shields.io/badge/wagmi-v0.12.12-brightgreen)  
 
