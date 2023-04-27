@@ -25,7 +25,7 @@ function App() {
   return (
     <>
       {useRoutes([...routes, { path: '*', element: <Redirect to="/" /> }])}
-      <ToastProvider>
+      <ToastProvider duration={2000}>
         {toasts.map(function ({ id, title, description, action, ...props }) {
           return (
             <Toast key={id} {...props}>
