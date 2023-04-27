@@ -20,7 +20,7 @@ export function NetworkSwitcher() {
             x.id === chain?.id ? null : (
               <Button key={x.id} onClick={() => switchNetwork(x.id)}>
                 {isLoading && x.id === pendingChainId && (
-                  <span className="i-line-md:loading-twotone-loop inline-flex w-4 h-4 text-white"></span>
+                  <span className="i-line-md:loading-twotone-loop inline-flex mr-1 w-4 h-4 text-white"></span>
                 )}{' '}
                 {x.name}
               </Button>

@@ -16,8 +16,8 @@ const Home = () => {
 
   const [show, setShow] = useState(false)
 
-  const onCancel = () => {
-    setShow(false)
+  const toggleModal = (e: boolean) => {
+    setShow(e)
   }
 
   return (
@@ -30,15 +30,15 @@ const Home = () => {
         <span className="inline-flex w-8 h-8 i-carbon:logo-github"></span>
       </a>
       <a href="https://github.com/zouhangwithsweet" target="_blank">
-        <img src="/logo.png" alt="" className="w-32 rounded-full mb-10 shadow hover:shadow-blue-300" />
+        <img src="/logo.png" alt="" className="w-32 rounded-full mb-10" />
       </a>
-      <p className="text-3xl font-bold underline hover:text-blue-300">Hello Vite + React + Wagmi Dapp!</p>
+      <p className="text-3xl">Hello Vite + React + Wagmi Dapp!</p>
       <p className="text-center">
         {address} <br /> {formatAmount(balance?.formatted)}
       </p>
       <p className="flex gap-4">
-        <WalletModal>
-          <Button onClick={() => setShow(true)} className="flex items-center">
+        <WalletModal open={show} onOpenChange={toggleModal} close={() => setShow(false)}>
+          <Button className="flex items-center">
             {address ? 'disconnect' : 'connect'} <span className="i-carbon:cookie"></span>
           </Button>
         </WalletModal>
