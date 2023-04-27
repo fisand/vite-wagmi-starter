@@ -1,4 +1,4 @@
-import { formatAmount } from '@did-network/dapp-sdk'
+import { formatAmount, shorten } from '@did-network/dapp-sdk'
 import { useNavigate } from 'react-router-dom'
 import { Button } from 'uno-ui/src/components/ui/button'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from 'uno-ui/src/components/ui/card'
@@ -43,7 +43,7 @@ const Home = () => {
             <NetworkSwitcher />
             <WalletModal open={show} onOpenChange={toggleModal} close={() => setShow(false)}>
               <Button className="flex items-center h-8 mr-4" size="sm">
-                {address ? 'Disconnect' : 'Connect Wallet'}
+                {address ? shorten(address) : 'Connect Wallet'}
               </Button>
             </WalletModal>
           </>
