@@ -13,18 +13,18 @@ import {
 import { useAccount, useConnect, useDisconnect } from 'wagmi'
 
 export function WalletModal(props: {
-  children: ReactNode
+  children: ({ isLoading }: { isLoading?: boolean }) => ReactNode
   open: boolean
   onOpenChange: (open: boolean) => void
   close?: () => void
 }) {
-  const { connect, connectors, pendingConnector } = useConnect()
+  const { connect, connectors, pendingConnector, isLoading } = useConnect()
   const { address, isConnecting } = useAccount()
   const { disconnect } = useDisconnect()
 
   return (
     <Dialog open={props.open} onOpenChange={props.onOpenChange}>
-      <DialogTrigger asChild>{props.children}</DialogTrigger>
+      <DialogTrigger asChild>{props.children({ isLoading })}</DialogTrigger>
       <DialogContent className="sm:max-w-[425px] md:top-30">
         <DialogHeader>
           <DialogTitle>Wallet</DialogTitle>

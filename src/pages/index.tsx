@@ -1,9 +1,8 @@
 import { formatAmount, shorten } from '@did-network/dapp-sdk'
-import { useNavigate } from 'react-router-dom'
 import { Button } from 'uno-ui/src/components/ui/button'
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from 'uno-ui/src/components/ui/card'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from 'uno-ui/src/components/ui/card'
 import { useToast } from 'uno-ui/src/components/ui/use-toast'
-import { useAccount, useBalance } from 'wagmi'
+import { useAccount } from 'wagmi'
 
 import { Header } from '@/components/layout/Header'
 import { NetworkSwitcher } from '@/components/SwitchNetworks'
@@ -12,11 +11,7 @@ import { useWagmi } from '@/hooks'
 import { useCopyToClipboard } from '@/hooks/useCopy'
 
 const Home = () => {
-  const navigator = useNavigate()
   const { address } = useAccount()
-  const { data: balance } = useBalance({
-    address,
-  })
 
   const [show, setShow] = useState(false)
 
@@ -25,7 +20,7 @@ const Home = () => {
   }
 
   const [_, copy] = useCopyToClipboard()
-  const { toast, toasts } = useToast()
+  const { toast } = useToast()
 
   const copyHandler = useCallback(() => {
     copy('pnpm dlx fisand')
@@ -42,9 +37,14 @@ const Home = () => {
           <>
             <NetworkSwitcher />
             <WalletModal open={show} onOpenChange={toggleModal} close={() => setShow(false)}>
-              <Button className="flex items-center h-8 mr-4" size="sm">
-                {address ? shorten(address) : 'Connect Wallet'}
-              </Button>
+              {({ isLoading }) => (
+                <Button className="flex items-center h-8 mr-4" size="sm">
+                  {isLoading && (
+                    <span className="i-line-md:loading-twotone-loop inline-flex mr-1 w-4 h-4 text-white"></span>
+                  )}{' '}
+                  {address ? shorten(address) : 'Connect Wallet'}
+                </Button>
+              )}
             </WalletModal>
           </>
         }
