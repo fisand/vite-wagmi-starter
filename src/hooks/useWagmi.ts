@@ -1,4 +1,4 @@
-import { useAccount, useContractRead, useContractReads } from 'wagmi'
+import { useAccount, useContractReads } from 'wagmi'
 
 import { useWagmiContract } from './useContract'
 
@@ -10,24 +10,20 @@ export const useWagmi = () => {
     contracts: [
       {
         ...wagmiContract,
-        functionName: 'getHunger',
-        // watch: true,
+        functionName: 'getAlive',
       },
       {
         ...wagmiContract,
         functionName: 'getBoredom',
-        // watch: true,
       },
       {
         ...wagmiContract,
         functionName: 'getAlive',
-        // watch: true,
       },
       {
         ...wagmiContract,
         functionName: 'love',
-        args: [address],
-        // watch: true,
+        args: [address!],
       },
     ],
   })

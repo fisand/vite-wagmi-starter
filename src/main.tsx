@@ -1,6 +1,6 @@
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
-import { configureChains, createClient, WagmiConfig } from 'wagmi'
+import { configureChains, createConfig, WagmiConfig } from 'wagmi'
 import { arbitrum, arbitrumGoerli, bsc, bscTestnet, goerli, mainnet, polygon } from 'wagmi/chains'
 import { InjectedConnector } from 'wagmi/connectors/injected'
 import { MetaMaskConnector } from 'wagmi/connectors/metaMask'
@@ -17,7 +17,7 @@ import 'uno.css'
 
 console.table(import.meta.env)
 
-const { chains, provider, webSocketProvider } = configureChains(
+const { chains, publicClient, webSocketPublicClient } = configureChains(
   [arbitrum, arbitrumGoerli, bsc, bscTestnet, mainnet, polygon, goerli],
   [
     // publicProvider(),
@@ -31,7 +31,7 @@ const { chains, provider, webSocketProvider } = configureChains(
   ]
 )
 
-const client = createClient({
+const config = createConfig({
   autoConnect: true,
   connectors: [
     new MetaMaskConnector({ chains }),
@@ -54,8 +54,8 @@ const client = createClient({
       },
     }),
   ],
-  provider,
-  webSocketProvider,
+  publicClient,
+  webSocketPublicClient,
 })
 
 // ReactDOM.render(
@@ -77,7 +77,7 @@ const client = createClient({
 
 const root = createRoot(document.getElementById('root')!)
 root.render(
-  <WagmiConfig client={client}>
+  <WagmiConfig config={config}>
     <BrowserRouter>
       <App />
     </BrowserRouter>

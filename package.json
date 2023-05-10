@@ -15,7 +15,6 @@
     "antd": "^5.1.7",
     "axios": "^1.2.6",
     "buffer": "^6.0.3",
-    "ethers": "^5.7.2",
     "jotai": "^1.13.1",
     "node-stdlib-browser": "^1.2.0",
     "react": "^18.2.0",
@@ -23,7 +22,8 @@
     "react-router": "^6.8.0",
     "react-router-dom": "^6.8.0",
     "uno-ui": "github:fisand/uno-shadcn-ui",
-    "wagmi": "^0.12.12"
+    "viem": "^0.3.19",
+    "wagmi": "^1.0.1"
   },
   "devDependencies": {
     "@iconify-json/carbon": "^1.1.14",

@@ -1,14 +1,14 @@
 import { useNetwork } from 'wagmi'
 import { goerli, mainnet } from 'wagmi/chains'
 
-import WAGMI_ABI from './abi/Wagmi.json'
+import WAGMI_ABI from './abi/Wagmi'
 
 export const useWagmiContract = () => {
   const address = useWagmiContractAddress()
   return useMemo(
     () => ({
       address: address! as `0x${string}`,
-      contractInterface: WAGMI_ABI,
+      abi: WAGMI_ABI,
     }),
     [address]
   )
