@@ -7557,7 +7557,7 @@ packages:
     dependencies:
       universalify: 2.0.0
     optionalDependencies:
-      graceful-fs: 4.2.10
+      graceful-fs: 4.2.11
     dev: true
 
   /jsonparse@1.3.1:
@@ -10500,7 +10500,7 @@ packages:
     dev: false
 
   github.com/fisand/uno-shadcn-ui/6661c74246c11c3b50fd9582e7b49b801486eacd(@types/react@18.0.27)(typescript@4.9.5):
-    resolution: {commit: 6661c74246c11c3b50fd9582e7b49b801486eacd, repo: git+ssh://git@github.com/fisand/uno-shadcn-ui.git, type: git}
+    resolution: {tarball: https://codeload.github.com/fisand/uno-shadcn-ui/tar.gz/6661c74246c11c3b50fd9582e7b49b801486eacd}
     id: github.com/fisand/uno-shadcn-ui/6661c74246c11c3b50fd9582e7b49b801486eacd
     name: fisand-shadcn-admin
     version: 1.0.0
