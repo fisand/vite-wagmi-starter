@@ -61,8 +61,8 @@ export default defineConfig(({ mode }) => {
         output: {
           manualChunks: {
             'react-vendor': ['react', 'react-router-dom', 'react-dom'],
-            'eth-vendor': ['ethers'],
-            'ui-vendor': ['antd', 'wagmi'],
+            'wagmi-vendor': ['wagmi', 'viem'],
+            'ui-vendor': ['antd'],
           },
         },
       },
