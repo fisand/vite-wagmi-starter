@@ -83,10 +83,10 @@ devDependencies:
     version: 0.49.1
   '@vitejs/plugin-legacy':
     specifier: ^3.0.2
-    version: 3.0.2(terser@5.17.3)(vite@4.3.2)
+    version: 3.0.2(terser@5.17.3)(vite@4.3.5)
   '@vitejs/plugin-react':
     specifier: 4.0.0
-    version: 4.0.0(vite@4.3.2)
+    version: 4.0.0(vite@4.3.5)
   eslint:
     specifier: ^8.33.0
     version: 8.33.0
@@ -125,7 +125,7 @@ devDependencies:
     version: 4.9.5
   unocss:
     specifier: ^0.49.1
-    version: 0.49.1(vite@4.3.2)
+    version: 0.49.1(vite@4.3.5)
   unplugin-auto-import:
     specifier: ^0.13.0
     version: 0.13.0
@@ -133,20 +133,20 @@ devDependencies:
     specifier: ^0.15.2
     version: 0.15.2(@svgr/core@6.5.1)
   vite:
-    specifier: 4.3.2
-    version: 4.3.2(@types/node@18.15.11)(less@4.1.3)(terser@5.17.3)
+    specifier: 4.3.5
+    version: 4.3.5(@types/node@18.15.11)(less@4.1.3)(terser@5.17.3)
   vite-plugin-checker:
     specifier: ^0.5.5
-    version: 0.5.5(eslint@8.33.0)(typescript@4.9.5)(vite@4.3.2)
+    version: 0.5.5(eslint@8.33.0)(typescript@4.9.5)(vite@4.3.5)
   vite-plugin-eslint:
     specifier: ^1.8.1
-    version: 1.8.1(eslint@8.33.0)(vite@4.3.2)
+    version: 1.8.1(eslint@8.33.0)(vite@4.3.5)
   vite-plugin-node-stdlib-browser:
     specifier: ^0.2.1
-    version: 0.2.1(node-stdlib-browser@1.2.0)(vite@4.3.2)
+    version: 0.2.1(node-stdlib-browser@1.2.0)(vite@4.3.5)
   vite-plugin-pages:
     specifier: ^0.28.0
-    version: 0.28.0(vite@4.3.2)
+    version: 0.28.0(vite@4.3.5)
 
 packages:
 
@@ -4392,12 +4392,12 @@ packages:
       eslint-visitor-keys: 3.3.0
     dev: true
 
-  /@unocss/astro@0.49.1(vite@4.3.2):
+  /@unocss/astro@0.49.1(vite@4.3.5):
     resolution: {integrity: sha512-UA7/GUHEiixFavk01+oiCGRLcWJMRbx03bLiAYQvroIj+N41xDroevce5kUJl1xl4jfF1B3pLzUGNRSz5rFjNQ==}
     dependencies:
       '@unocss/core': 0.49.1
       '@unocss/reset': 0.49.1
-      '@unocss/vite': 0.49.1(vite@4.3.2)
+      '@unocss/vite': 0.49.1(vite@4.3.5)
     transitivePeerDependencies:
       - rollup
       - vite
@@ -4532,7 +4532,7 @@ packages:
       '@unocss/core': 0.49.1
     dev: true
 
-  /@unocss/vite@0.49.1(vite@4.3.2):
+  /@unocss/vite@0.49.1(vite@4.3.5):
     resolution: {integrity: sha512-8/tZaPfHhKVQMjFa4PBALx73hq4eCVz9V9gUfaWTWM5x3nUVRDbYDkfSKkUPAU6cuElIjVarJ+zFTAw1ltKABA==}
     peerDependencies:
       vite: ^2.9.0 || ^3.0.0-0 || ^4.0.0
@@ -4547,12 +4547,12 @@ packages:
       chokidar: 3.5.3
       fast-glob: 3.2.12
       magic-string: 0.27.0
-      vite: 4.3.2(@types/node@18.15.11)(less@4.1.3)(terser@5.17.3)
+      vite: 4.3.5(@types/node@18.15.11)(less@4.1.3)(terser@5.17.3)
     transitivePeerDependencies:
       - rollup
     dev: true
 
-  /@vitejs/plugin-legacy@3.0.2(terser@5.17.3)(vite@4.3.2):
+  /@vitejs/plugin-legacy@3.0.2(terser@5.17.3)(vite@4.3.5):
     resolution: {integrity: sha512-9BT2mXunC7kQGKHP70BIbNZ/85P/KUMGKBS9CiV+XKNDZGNBjUnyrh3ofgtqgObmxKaEP2xJsEIRNIFJ+hjI8w==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
@@ -4565,10 +4565,10 @@ packages:
       regenerator-runtime: 0.13.11
       systemjs: 6.13.0
       terser: 5.17.3
-      vite: 4.3.2(@types/node@18.15.11)(less@4.1.3)(terser@5.17.3)
+      vite: 4.3.5(@types/node@18.15.11)(less@4.1.3)(terser@5.17.3)
     dev: true
 
-  /@vitejs/plugin-react@4.0.0(vite@4.3.2):
+  /@vitejs/plugin-react@4.0.0(vite@4.3.5):
     resolution: {integrity: sha512-HX0XzMjL3hhOYm+0s95pb0Z7F8O81G7joUHgfDd/9J/ZZf5k4xX6QAMFkKsHFxaHlf6X7GD7+XuaZ66ULiJuhQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
@@ -4578,7 +4578,7 @@ packages:
       '@babel/plugin-transform-react-jsx-self': 7.21.0(@babel/core@7.21.4)
       '@babel/plugin-transform-react-jsx-source': 7.19.6(@babel/core@7.21.4)
       react-refresh: 0.14.0
-      vite: 4.3.2(@types/node@18.15.11)(less@4.1.3)(terser@5.17.3)
+      vite: 4.3.5(@types/node@18.15.11)(less@4.1.3)(terser@5.17.3)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -7557,7 +7557,7 @@ packages:
     dependencies:
       universalify: 2.0.0
     optionalDependencies:
-      graceful-fs: 4.2.11
+      graceful-fs: 4.2.10
     dev: true
 
   /jsonparse@1.3.1:
@@ -9247,8 +9247,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /rollup@3.21.0:
-    resolution: {integrity: sha512-ANPhVcyeHvYdQMUyCbczy33nbLzI7RzrBje4uvNiTDJGIMtlKoOStmympwr9OtS1LZxiDmE2wvxHyVhoLtf1KQ==}
+  /rollup@3.21.6:
+    resolution: {integrity: sha512-SXIICxvxQxR3D4dp/3LDHZIJPC8a4anKMHd4E3Jiz2/JnY+2bEjqrOokAauc5ShGVNFHlEFjBXAXlaxkJqIqSg==}
     engines: {node: '>=14.18.0', npm: '>=8.0.0'}
     hasBin: true
     optionalDependencies:
@@ -9831,7 +9831,7 @@ packages:
     engines: {node: '>= 10.0.0'}
     dev: true
 
-  /unocss@0.49.1(vite@4.3.2):
+  /unocss@0.49.1(vite@4.3.5):
     resolution: {integrity: sha512-NtbJOA7aF3Qq5fGy94kMKU51XwyTWEzAAuhTx7zbrYOXlJ8QDw2jN3tQC2dMmGLFEspM16qIK0OD6jFuMj2ccQ==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -9840,7 +9840,7 @@ packages:
       '@unocss/webpack':
         optional: true
     dependencies:
-      '@unocss/astro': 0.49.1(vite@4.3.2)
+      '@unocss/astro': 0.49.1(vite@4.3.5)
       '@unocss/cli': 0.49.1
       '@unocss/core': 0.49.1
       '@unocss/preset-attributify': 0.49.1
@@ -9856,7 +9856,7 @@ packages:
       '@unocss/transformer-compile-class': 0.49.1
       '@unocss/transformer-directives': 0.49.1
       '@unocss/transformer-variant-group': 0.49.1
-      '@unocss/vite': 0.49.1(vite@4.3.2)
+      '@unocss/vite': 0.49.1(vite@4.3.5)
     transitivePeerDependencies:
       - rollup
       - supports-color
@@ -10052,7 +10052,7 @@ packages:
       - zod
     dev: false
 
-  /vite-plugin-checker@0.5.5(eslint@8.33.0)(typescript@4.9.5)(vite@4.3.2):
+  /vite-plugin-checker@0.5.5(eslint@8.33.0)(typescript@4.9.5)(vite@4.3.5):
     resolution: {integrity: sha512-BLaRlBmiVn3Fg/wR9A0+YNwgXVteFJaH8rCIiIgYQcQ50jc3oVe2m8i0xxG5geq36UttNJsAj7DpDelN7/KjOg==}
     engines: {node: '>=14.16'}
     peerDependencies:
@@ -10097,14 +10097,14 @@ packages:
       strip-ansi: 6.0.1
       tiny-invariant: 1.3.1
       typescript: 4.9.5
-      vite: 4.3.2(@types/node@18.15.11)(less@4.1.3)(terser@5.17.3)
+      vite: 4.3.5(@types/node@18.15.11)(less@4.1.3)(terser@5.17.3)
       vscode-languageclient: 7.0.0
       vscode-languageserver: 7.0.0
       vscode-languageserver-textdocument: 1.0.8
       vscode-uri: 3.0.7
     dev: true
 
-  /vite-plugin-eslint@1.8.1(eslint@8.33.0)(vite@4.3.2):
+  /vite-plugin-eslint@1.8.1(eslint@8.33.0)(vite@4.3.5):
     resolution: {integrity: sha512-PqdMf3Y2fLO9FsNPmMX+//2BF5SF8nEWspZdgl4kSt7UvHDRHVVfHvxsD7ULYzZrJDGRxR81Nq7TOFgwMnUang==}
     peerDependencies:
       eslint: '>=7'
@@ -10114,10 +10114,10 @@ packages:
       '@types/eslint': 8.4.10
       eslint: 8.33.0
       rollup: 2.79.1
-      vite: 4.3.2(@types/node@18.15.11)(less@4.1.3)(terser@5.17.3)
+      vite: 4.3.5(@types/node@18.15.11)(less@4.1.3)(terser@5.17.3)
     dev: true
 
-  /vite-plugin-node-stdlib-browser@0.2.1(node-stdlib-browser@1.2.0)(vite@4.3.2):
+  /vite-plugin-node-stdlib-browser@0.2.1(node-stdlib-browser@1.2.0)(vite@4.3.5):
     resolution: {integrity: sha512-6u2i613Dkqj5KaTNIrnZvE6y3/awWAp0S5TjucTvGxdhetftB1Mgvblc+nwYzlw6sntPlac8UOC7ttXNh+LZKA==}
     peerDependencies:
       node-stdlib-browser: ^1.2.0
@@ -10125,12 +10125,12 @@ packages:
     dependencies:
       '@rollup/plugin-inject': 5.0.3
       node-stdlib-browser: 1.2.0
-      vite: 4.3.2(@types/node@18.15.11)(less@4.1.3)(terser@5.17.3)
+      vite: 4.3.5(@types/node@18.15.11)(less@4.1.3)(terser@5.17.3)
     transitivePeerDependencies:
       - rollup
     dev: true
 
-  /vite-plugin-pages@0.28.0(vite@4.3.2):
+  /vite-plugin-pages@0.28.0(vite@4.3.5):
     resolution: {integrity: sha512-yncDncFVnjUzhqJnwCgGDZoZ/wO6MEOMe93f2MQjplKXm1MpmHCrTkFCPnQyYGZTVKPAN+y7BQcIpNWPFLQ4+w==}
     peerDependencies:
       '@vue/compiler-sfc': ^2.7.0 || ^3.0.0
@@ -10147,14 +10147,14 @@ packages:
       json5: 2.2.3
       local-pkg: 0.4.3
       picocolors: 1.0.0
-      vite: 4.3.2(@types/node@18.15.11)(less@4.1.3)(terser@5.17.3)
+      vite: 4.3.5(@types/node@18.15.11)(less@4.1.3)(terser@5.17.3)
       yaml: 2.2.1
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /vite@4.3.2(@types/node@18.15.11)(less@4.1.3)(terser@5.17.3):
-    resolution: {integrity: sha512-9R53Mf+TBoXCYejcL+qFbZde+eZveQLDYd9XgULILLC1a5ZwPaqgmdVpL8/uvw2BM/1TzetWjglwm+3RO+xTyw==}
+  /vite@4.3.5(@types/node@18.15.11)(less@4.1.3)(terser@5.17.3):
+    resolution: {integrity: sha512-0gEnL9wiRFxgz40o/i/eTBwm+NEbpUeTWhzKrZDSdKm6nplj+z4lKz8ANDgildxHm47Vg8EUia0aicKbawUVVA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
@@ -10182,7 +10182,7 @@ packages:
       esbuild: 0.17.18
       less: 4.1.3
       postcss: 8.4.23
-      rollup: 3.21.0
+      rollup: 3.21.6
       terser: 5.17.3
     optionalDependencies:
       fsevents: 2.3.2
@@ -10500,7 +10500,7 @@ packages:
     dev: false
 
   github.com/fisand/uno-shadcn-ui/6661c74246c11c3b50fd9582e7b49b801486eacd(@types/react@18.0.27)(typescript@4.9.5):
-    resolution: {tarball: https://codeload.github.com/fisand/uno-shadcn-ui/tar.gz/6661c74246c11c3b50fd9582e7b49b801486eacd}
+    resolution: {commit: 6661c74246c11c3b50fd9582e7b49b801486eacd, repo: git+ssh://git@github.com/fisand/uno-shadcn-ui.git, type: git}
     id: github.com/fisand/uno-shadcn-ui/6661c74246c11c3b50fd9582e7b49b801486eacd
     name: fisand-shadcn-admin
     version: 1.0.0
