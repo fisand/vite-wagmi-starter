@@ -14,3 +14,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@property --conic-deg {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes conic {
+  from {
+    --conic-deg: 0deg;
+  }
+  to {
+    --conic-deg: 360deg;
+  }
+}
