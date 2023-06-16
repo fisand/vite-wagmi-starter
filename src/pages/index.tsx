@@ -1,11 +1,11 @@
 import { formatAmount, shorten } from '@did-network/dapp-sdk'
-import { Button } from 'uno-ui/src/components/ui/button'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from 'uno-ui/src/components/ui/card'
-import { useToast } from 'uno-ui/src/components/ui/use-toast'
 import { useAccount } from 'wagmi'
 
 import { Header } from '@/components/layout/Header'
 import { NetworkSwitcher } from '@/components/SwitchNetworks'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { useToast } from '@/components/ui/use-toast'
 import { WalletModal } from '@/components/WalletModal'
 import { useWagmi } from '@/hooks'
 import { useCopyToClipboard } from '@/hooks/useCopy'
@@ -65,9 +65,11 @@ const Home = () => {
         </p>
         <p className="mt-3 text-5xl text-center font-bold lt-sm:text-3xl">The better template to launch a Web3 dapp</p>
         <p className="mt-3 text-3xl text-center lt-sm:text-xl group">
-          Designed for everyone. Built with wagmi{' '}
-          <span className="i-logos:vitejs inline-flex w-5 h-5 -group-hover:rotate-30 transition-all" />{' '}
-          <span className="i-logos:unocss inline-flex w-5 h-5 group-hover:rotate-23 transition-all" />.
+          Designed for everyone. Built with{' '}
+          <span className="inline-flex group-hover:animate-bounce-alt !animate-delay-300">wagmi</span>{' '}
+          <span className="inline-flex w-5 h-5 group-hover:animate-bounce-alt transition-all i-logos:vitejs" />{' '}
+          <span className="inline-flex w-5 h-5 !animate-delay-200 group-hover:animate-bounce-alt transition-all i-logos:unocss " />
+          .
         </p>
         <div className="mt-8 flex-center">
           <div className="m-auto py-2 px-8 flex-center bg-#666 rounded-full text-white">

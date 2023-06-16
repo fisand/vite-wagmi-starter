@@ -1,4 +1,6 @@
-import { Button } from 'uno-ui/src/components/ui/button'
+import { useNetwork, useSwitchNetwork } from 'wagmi'
+
+import { Button } from '@/components/ui/button'
 import {
   Select,
   SelectContent,
@@ -7,8 +9,7 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from 'uno-ui/src/components/ui/select'
-import { useNetwork, useSwitchNetwork } from 'wagmi'
+} from '@/components/ui/select'
 
 export function NetworkSwitcher() {
   const { error, isLoading, pendingChainId, switchNetwork } = useSwitchNetwork()

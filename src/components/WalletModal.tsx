@@ -1,6 +1,8 @@
 import { shorten } from '@did-network/dapp-sdk'
 import { ReactNode } from 'react'
-import { Button } from 'uno-ui/src/components/ui/button'
+import { useAccount, useConnect, useDisconnect } from 'wagmi'
+
+import { Button } from '@/components/ui/button'
 import {
   Dialog,
   DialogContent,
@@ -9,8 +11,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from 'uno-ui/src/components/ui/dialog'
-import { useAccount, useConnect, useDisconnect } from 'wagmi'
+} from '@/components/ui/dialog'
 
 export function WalletModal(props: {
   children: ({ isLoading }: { isLoading?: boolean }) => ReactNode

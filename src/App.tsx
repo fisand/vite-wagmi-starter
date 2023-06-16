@@ -1,15 +1,8 @@
 import { useEffect } from 'react'
 import { useNavigate, useRoutes } from 'react-router-dom'
-import {
-  Toast,
-  ToastClose,
-  ToastDescription,
-  ToastProvider,
-  ToastTitle,
-  ToastViewport,
-} from 'uno-ui/src/components/ui/toast'
-import { useToast } from 'uno-ui/src/components/ui/use-toast'
 
+import { Toast, ToastClose, ToastDescription, ToastProvider, ToastTitle, ToastViewport } from '@/components/ui/toast'
+import { useToast } from '@/components/ui/use-toast'
 import routes from '~react-pages'
 
 function Redirect({ to }: { to: string }) {
