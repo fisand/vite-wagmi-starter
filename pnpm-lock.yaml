@@ -22,6 +22,9 @@ dependencies:
   '@radix-ui/react-toast':
     specifier: ^1.1.4
     version: 1.1.4(@types/react-dom@18.0.10)(@types/react@18.0.27)(react-dom@18.2.0)(react@18.2.0)
+  '@unocss/preset-mini':
+    specifier: ^0.53.4
+    version: 0.53.4
   '@unocss/reset':
     specifier: ^0.49.1
     version: 0.49.1
@@ -4178,11 +4181,21 @@ packages:
     resolution: {integrity: sha512-H8mLy6ZKu9nGZe5jlHhLPIVwh2G3cCDSBGl5aIZJFI1qpmDC+Zb3iueBGigNpX75IzkjaGKZiK1WUWq8TShjtA==}
     dev: true
 
+  /@unocss/core@0.53.4:
+    resolution: {integrity: sha512-JvmpuFOiJ8NkGzRmh0dCUmNdYjr8MmMtCX+czCmSnX2kvKyQjJIw3RIu84/DQbd/M/yxZmPjle8DrcZ1Ql86rQ==}
+    dev: false
+
   /@unocss/extractor-arbitrary-variants@0.51.12:
     resolution: {integrity: sha512-/HJH48LbnzTzPkq7yNf+F8tpq7F8b0ibuv0Y/PFQdRN+5OBpRoVwzK7pnJccpiOFbWqlfIQ/ao0MgVc+321tUw==}
     dependencies:
       '@unocss/core': 0.51.12
     dev: true
+
+  /@unocss/extractor-arbitrary-variants@0.53.4:
+    resolution: {integrity: sha512-ydkfObZALqRqe/M68hBsIfT6KsUFm3nBD/4xUf4hvOiIySwptzUWYliVSoPHqhEq8L122oAEG1i5Yg8kQUUJZQ==}
+    dependencies:
+      '@unocss/core': 0.53.4
+    dev: false
 
   /@unocss/inspector@0.51.12:
     resolution: {integrity: sha512-FsdFMw3xxLgnk5vtvN78hGYdY5Vb5d5WZnPJBjTgH+dfH2PIqGHQu/TXK2wPvSyUbWJE6ilRKI5FsnoXmCwAGA==}
@@ -4243,6 +4256,13 @@ packages:
       '@unocss/core': 0.51.12
       '@unocss/extractor-arbitrary-variants': 0.51.12
     dev: true
+
+  /@unocss/preset-mini@0.53.4:
+    resolution: {integrity: sha512-m9SMA9m1VhC0xAXtw07lke9GltuLTZONWlad79KkYi/2YaywZsJAk8Y4+MVo4B4azh1Jxz2LOtEEBgqIYhbqJg==}
+    dependencies:
+      '@unocss/core': 0.53.4
+      '@unocss/extractor-arbitrary-variants': 0.53.4
+    dev: false
 
   /@unocss/preset-tagify@0.51.12:
     resolution: {integrity: sha512-EP9D7UFywSVD4oKikZ9AkBJ+J8oOUCEmgkK8FiGsoRs5Wy60QMKw0VSA9S2LsSJBFvw+8y4UJWqXVrm/PJ1AuA==}
