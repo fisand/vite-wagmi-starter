@@ -1,6 +1,7 @@
 import { useNetwork, useSwitchNetwork } from 'wagmi'
 
 import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
 import {
   Select,
   SelectContent,
@@ -27,7 +28,7 @@ export function NetworkSwitcher() {
       defaultValue={defaultValue}
       value={defaultValue}
     >
-      <SelectTrigger className="max-w-auto h-8 lt-sm:hidden">
+      <SelectTrigger className="max-w-auto lt-sm:hidden">
         <SelectValue>
           <span className="flex-center">
             {isLoading && (
@@ -41,7 +42,7 @@ export function NetworkSwitcher() {
         <SelectGroup>
           {chains.map((x) =>
             x.id === chain?.id ? null : (
-              <SelectItem value={`${x.id}`} key={x.id} className="first:[&>span]:hidden pl-2">
+              <SelectItem value={`${x.id}`} key={x.id} className="">
                 <span className="flex-center">
                   {isLoading && x.id === pendingChainId && (
                     <span className="i-line-md:loading-twotone-loop inline-flex mr-1 w-4 h-4 text-primary"></span>

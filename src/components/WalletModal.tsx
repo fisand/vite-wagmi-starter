@@ -26,7 +26,7 @@ export function WalletModal(props: {
   return (
     <Dialog open={props.open} onOpenChange={props.onOpenChange}>
       <DialogTrigger asChild>{props.children({ isLoading })}</DialogTrigger>
-      <DialogContent className="sm:max-w-[425px] md:top-30">
+      <DialogContent className="sm:max-w-[425px] md:top-70">
         <DialogHeader>
           <DialogTitle>Wallet</DialogTitle>
           <DialogDescription>connect to web3</DialogDescription>
@@ -57,7 +57,8 @@ export function WalletModal(props: {
                     })
                     props.close?.()
                   }}
-                  className="w-full mb-3 rounded-lg h-12"
+                  className="w-full mb-3"
+                  size="lg"
                 >
                   {connector.name}
                   {!connector.ready && ' (unsupported)'}

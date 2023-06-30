@@ -38,7 +38,7 @@ const Home = () => {
             <NetworkSwitcher />
             <WalletModal open={show} onOpenChange={toggleModal} close={() => setShow(false)}>
               {({ isLoading }) => (
-                <Button className="flex items-center h-8 mr-4" size="sm">
+                <Button className="flex items-center mr-4">
                   {isLoading && (
                     <span className="i-line-md:loading-twotone-loop inline-flex mr-1 w-4 h-4 text-white"></span>
                   )}{' '}
@@ -79,7 +79,7 @@ const Home = () => {
         </div>
         <div className="mt-16 max-w-6xl m-auto px-4 flex gap-8 flex-wrap items-stretch justify-center">
           <div className="p-.5 rounded-lg hover:bg-gradient-conic hover:bg-gradient-[from_var(--conic-deg),#B4EAA1,yellow,#B4EAA1] hover:animate-[conic_2.5s_infinite_linear]">
-            <Card className="w-[318px]">
+            <Card className="w-[318px] rounded-lg">
               <CardHeader>
                 <CardTitle className="flex gap-1">
                   <svg
@@ -110,7 +110,7 @@ const Home = () => {
             </Card>
           </div>
           <div className="p-.5 rounded-lg hover:bg-gradient-conic hover:bg-gradient-[from_var(--conic-deg),#B4EAA1,yellow,#B4EAA1] hover:animate-[conic_2.5s_infinite_linear]">
-            <Card className="w-[318px]">
+            <Card className="w-[318px] rounded-lg">
               <CardHeader>
                 <CardTitle className="flex gap-2">
                   <span className="i-logos:vitejs inline-flex h-4 -group-hover:rotate-30 transition-all" /> Vite
@@ -128,7 +128,7 @@ const Home = () => {
             </Card>
           </div>
           <div className="p-.5 rounded-lg hover:bg-gradient-conic hover:bg-gradient-[from_var(--conic-deg),#B4EAA1,yellow,#B4EAA1] hover:animate-[conic_2.5s_infinite_linear]">
-            <Card className="w-[318px]">
+            <Card className="w-[318px] rounded-lg">
               <CardHeader>
                 <CardTitle className="flex gap-2">
                   <span className="i-logos:unocss inline-flex h-4 group-hover:rotate-23 transition-all" />
