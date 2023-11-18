@@ -4,6 +4,7 @@ import { resolve } from 'path'
 import Analyze from 'rollup-plugin-visualizer'
 import Unocss from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
+import { FileSystemIconLoader } from 'unplugin-icons/loaders'
 import IconsResolver from 'unplugin-icons/resolver'
 import Icons from 'unplugin-icons/vite'
 import { defineConfig, loadEnv } from 'vite'
@@ -28,6 +29,11 @@ export default defineConfig(({ mode }) => {
       Icons({
         compiler: 'jsx',
         jsx: 'react',
+        customCollections: {
+          'fisand-icon': FileSystemIconLoader(`${resolve(__dirname, 'src/assets/icons')}/`, (svg) =>
+            svg.replace(/^<svg /, '<svg fill="currentColor" ')
+          ),
+        },
       }),
       Pages({
         dirs: [{ dir: 'src/pages', baseRoute: env.BASE || '' }],

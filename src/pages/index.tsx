@@ -1,4 +1,4 @@
-import { formatAmount, shorten } from '@did-network/dapp-sdk'
+import { shorten } from '@did-network/dapp-sdk'
 import { useAccount } from 'wagmi'
 
 import { Header } from '@/components/layout/Header'
@@ -9,6 +9,7 @@ import { useToast } from '@/components/ui/use-toast'
 import { WalletModal } from '@/components/WalletModal'
 import { useWagmi } from '@/hooks'
 import { useCopyToClipboard } from '@/hooks/useCopy'
+import WagmiIcon from '~icons/fisand-icon/wagmi-icon'
 
 const Home = () => {
   const { address } = useAccount()
@@ -66,7 +67,7 @@ const Home = () => {
         <p className="mt-3 text-5xl text-center font-bold lt-sm:text-3xl">The better template to launch a Web3 dapp</p>
         <p className="mt-3 text-3xl text-center lt-sm:text-xl group">
           Designed for everyone. Built with{' '}
-          <span className="inline-flex group-hover:animate-bounce-alt !animate-delay-300">wagmi</span>{' '}
+          <WagmiIcon className="inline-flex h-5 group-hover:animate-bounce-alt !animate-delay-300" />{' '}
           <span className="inline-flex w-5 h-5 group-hover:animate-bounce-alt transition-all i-logos:vitejs" />{' '}
           <span className="inline-flex w-5 h-5 !animate-delay-200 group-hover:animate-bounce-alt transition-all i-logos:unocss " />
           .
