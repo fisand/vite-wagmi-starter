@@ -1,7 +1,5 @@
-import { useNetwork, useSwitchNetwork } from 'wagmi'
+import { useAccount, useSwitchChain } from 'wagmi'
 
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
 import {
   Select,
   SelectContent,
@@ -13,17 +11,20 @@ import {
 } from '@/components/ui/select'
 
 export function NetworkSwitcher() {
-  const { error, isLoading, pendingChainId, switchNetwork } = useSwitchNetwork()
-  const { chains, chain } = useNetwork()
-
+  const { chains, switchChain, isPending } = useSwitchChain()
+  const { chain } = useAccount()
   const defaultValue = useMemo(() => chain?.id.toString(), [chain?.id])
 
+  const [pendingChainId, setPendingChainId] = useState<number>()
   if (!chain) return null
 
   return (
     <Select
       onValueChange={(val) => {
-        switchNetwork?.(Number(val))
+        setPendingChainId(+val)
+        switchChain({
+          chainId: Number(val),
+        })
       }}
       defaultValue={defaultValue}
       value={defaultValue}
@@ -31,7 +32,7 @@ export function NetworkSwitcher() {
       <SelectTrigger className="max-w-auto lt-sm:hidden">
         <SelectValue>
           <span className="flex-center">
-            {isLoading && (
+            {isPending && (
               <span className="i-line-md:loading-twotone-loop inline-flex mr-1 w-4 h-4 text-primary"></span>
             )}{' '}
             {chain.name}
@@ -44,7 +45,7 @@ export function NetworkSwitcher() {
             x.id === chain?.id ? null : (
               <SelectItem value={`${x.id}`} key={x.id} className="">
                 <span className="flex-center">
-                  {isLoading && x.id === pendingChainId && (
+                  {isPending && x.id === pendingChainId && (
                     <span className="i-line-md:loading-twotone-loop inline-flex mr-1 w-4 h-4 text-primary"></span>
                   )}{' '}
                   {x.name}
