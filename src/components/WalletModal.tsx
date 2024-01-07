@@ -19,13 +19,14 @@ export function WalletModal(props: {
   onOpenChange: (open: boolean) => void
   close?: () => void
 }) {
-  const { connect, connectors, pendingConnector, isLoading } = useConnect()
+  const { connectAsync, connectors, isPending } = useConnect()
   const { address, isConnecting } = useAccount()
   const { disconnect } = useDisconnect()
+  const [pendingConnectorId, setPendingConnectorId] = useState('')
 
   return (
     <Dialog open={props.open} onOpenChange={props.onOpenChange}>
-      <DialogTrigger asChild>{props.children({ isLoading })}</DialogTrigger>
+      <DialogTrigger asChild>{props.children({ isLoading: isPending })}</DialogTrigger>
       <DialogContent className="sm:max-w-[425px] md:top-70">
         <DialogHeader>
           <DialogTitle>Wallet</DialogTitle>
@@ -49,10 +50,10 @@ export function WalletModal(props: {
             <div className="flex-col-center">
               {connectors.map((connector) => (
                 <Button
-                  disabled={!connector.ready}
                   key={connector.id}
-                  onClick={(e) => {
-                    connect({
+                  onClick={async (e) => {
+                    setPendingConnectorId(connector.id)
+                    await connectAsync({
                       connector,
                     })
                     props.close?.()
@@ -61,8 +62,8 @@ export function WalletModal(props: {
                   size="lg"
                 >
                   {connector.name}
-                  {!connector.ready && ' (unsupported)'}
-                  {isConnecting && connector.id === pendingConnector?.id && ' (connecting)'}
+                  {/* {!connector.ready && ' (unsupported)'} */}
+                  {isConnecting && connector.id === pendingConnectorId && ' (connecting)'}
                 </Button>
               ))}
             </div>
