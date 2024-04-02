@@ -24,7 +24,7 @@
     "buffer": "^6.0.3",
     "class-variance-authority": "^0.6.0",
     "clsx": "^1.2.1",
-    "jotai": "^1.13.1",
+    "jotai": "^2.7.2",
     "lucide-react": "^0.244.0",
     "node-stdlib-browser": "^1.2.0",
     "react": "^18.2.0",
@@ -32,8 +32,8 @@
     "react-router": "^6.8.0",
     "react-router-dom": "^6.8.0",
     "tailwind-merge": "^1.13.2",
-    "viem": "^2.0.2",
-    "wagmi": "^2.0.3"
+    "viem": "^2.9.6",
+    "wagmi": "^2.5.17"
   },
   "devDependencies": {
     "@iconify-json/carbon": "^1.1.14",

@@ -6,7 +6,7 @@ import { WagmiProvider } from 'wagmi'
 import App from './App'
 import { wagmiConfig } from './wagmi.config'
 
-import './index.css'
+import './assets/styles/index.css'
 import '@unocss/reset/tailwind.css'
 import 'uno.css'
 

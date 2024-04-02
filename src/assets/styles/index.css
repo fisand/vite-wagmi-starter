@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  font-family: 'Varela Round', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #f5f5f8
+}
+
+body .walletconnect-modal__footer {
+  flex-wrap: wrap;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@property --conic-deg {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes conic {
+  from {
+    --conic-deg: 0deg;
+  }
+  to {
+    --conic-deg: 360deg;
+  }
+}
