@@ -17,7 +17,6 @@
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-toast": "^1.1.4",
     "@tanstack/react-query": "^5.17.7",
-    "@unocss/preset-mini": "^0.53.4",
     "@unocss/reset": "^0.49.1",
     "antd": "^5.1.7",
     "axios": "^1.2.6",
