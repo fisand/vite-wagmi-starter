@@ -1,6 +1,6 @@
 import { defineConfig, presetIcons, presetUno, presetWind, UserConfig } from 'unocss'
-
-import { presetShadcn } from './preset.shadcn'
+// import { presetAnimations } from 'unocss-preset-animations'
+import { presetShadcn } from 'unocss-preset-shadcn'
 
 const config = {
   presets: [presetUno(), presetWind(), presetIcons(), presetShadcn()],

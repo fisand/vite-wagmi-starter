@@ -2,7 +2,7 @@ import react from '@vitejs/plugin-react'
 import { resolve } from 'path'
 // import legacy from '@vitejs/plugin-legacy'
 import Analyze from 'rollup-plugin-visualizer'
-import Unocss from 'unocss/vite'
+import UnoCSS from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import { FileSystemIconLoader } from 'unplugin-icons/loaders'
 import IconsResolver from 'unplugin-icons/resolver'
@@ -40,7 +40,7 @@ export default defineConfig(({ mode }) => {
         exclude: ['**/[A-Z]*.tsx'],
         importMode: 'sync',
       }),
-      Unocss(),
+      UnoCSS(),
       AutoImport({
         imports: [
           'react',
