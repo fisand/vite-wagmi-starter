@@ -66,7 +66,7 @@ const Home = () => {
         </p>
         <p className="mt-3 text-5xl text-center font-bold lt-sm:text-3xl">The better template to launch a Web3 dapp</p>
         <p className="mt-3 text-3xl text-center lt-sm:text-xl group">
-          Designed for everyone. Built with{' '}
+          Designed for everyone. <br className="hidden lt-sm:block" /> Built with{' '}
           <WagmiIcon className="inline-flex h-5 group-hover:animate-bounce-alt !animate-delay-300" />{' '}
           <span className="inline-flex w-5 h-5 group-hover:animate-bounce-alt transition-all i-logos:vitejs" />{' '}
           <span className="inline-flex w-5 h-5 !animate-delay-200 group-hover:animate-bounce-alt transition-all i-logos:unocss " />
@@ -79,7 +79,7 @@ const Home = () => {
           </div>
         </div>
         <div className="mt-16 max-w-6xl m-auto px-4 flex gap-8 flex-wrap items-stretch justify-center">
-          <div className="p-.5 rounded-lg hover:bg-gradient-conic hover:bg-gradient-[from_var(--conic-deg),#B4EAA1,yellow,#B4EAA1] hover:animate-[conic_2.5s_infinite_linear]">
+          <div className="p-.5 rounded-lg hover:bg-gradient-conic hover:bg-gradient-[from_var(--conic-deg),#B4EAA1,transparent,#B4EAA1] hover:animate-[conic_2.5s_infinite_linear]">
             <Card className="w-[318px] rounded-lg">
               <CardHeader>
                 <CardTitle className="flex gap-1">
@@ -110,7 +110,7 @@ const Home = () => {
               </CardContent>
             </Card>
           </div>
-          <div className="p-.5 rounded-lg hover:bg-gradient-conic hover:bg-gradient-[from_var(--conic-deg),#B4EAA1,yellow,#B4EAA1] hover:animate-[conic_2.5s_infinite_linear]">
+          <div className="p-.5 rounded-lg hover:bg-gradient-conic hover:bg-gradient-[from_var(--conic-deg),#B4EAA1,transparent,#B4EAA1] hover:animate-[conic_2.5s_infinite_linear]">
             <Card className="w-[318px] rounded-lg">
               <CardHeader>
                 <CardTitle className="flex gap-2">
@@ -128,7 +128,7 @@ const Home = () => {
               </CardContent>
             </Card>
           </div>
-          <div className="p-.5 rounded-lg hover:bg-gradient-conic hover:bg-gradient-[from_var(--conic-deg),#B4EAA1,yellow,#B4EAA1] hover:animate-[conic_2.5s_infinite_linear]">
+          <div className="p-.5 rounded-lg hover:bg-gradient-conic hover:bg-gradient-[from_var(--conic-deg),#B4EAA1,transparent,#B4EAA1] hover:animate-[conic_2.5s_infinite_linear]">
             <Card className="w-[318px] rounded-lg">
               <CardHeader>
                 <CardTitle className="flex gap-2">
@@ -167,6 +167,9 @@ const Home = () => {
           <Item key={index} />
         ))}
       </p>
+      <div className="border-t-1 border-border border-solid">
+        <div className="max-w-6xl py-6 mx-auto sm:px-8 lt-sm:px-4 text-center">© 2022-present Hang Zou</div>
+      </div>
     </>
   )
 }
