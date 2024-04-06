@@ -9,7 +9,7 @@ import { useToast } from '@/components/ui/use-toast'
 import { WalletModal } from '@/components/WalletModal'
 import { useWagmi } from '@/hooks'
 import { useCopyToClipboard } from '@/hooks/useCopy'
-import WagmiIcon from '~icons/fisand-icon/wagmi-icon'
+import WagmiIcon from '~icons/fisand-icons/wagmi-icon'
 
 const Home = () => {
   const { address } = useAccount()

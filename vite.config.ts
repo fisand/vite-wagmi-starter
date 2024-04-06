@@ -1,6 +1,5 @@
 import react from '@vitejs/plugin-react'
 import { resolve } from 'path'
-// import legacy from '@vitejs/plugin-legacy'
 import Analyze from 'rollup-plugin-visualizer'
 import UnoCSS from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
@@ -30,7 +29,7 @@ export default defineConfig(({ mode }) => {
         compiler: 'jsx',
         jsx: 'react',
         customCollections: {
-          'fisand-icon': FileSystemIconLoader(`${resolve(__dirname, 'src/assets/icons')}/`, (svg) =>
+          'fisand-icons': FileSystemIconLoader(`${resolve(__dirname, 'src/assets/icons')}/`, (svg) =>
             svg.replace(/^<svg /, '<svg fill="currentColor" ')
           ),
         },
@@ -42,12 +41,7 @@ export default defineConfig(({ mode }) => {
       }),
       UnoCSS(),
       AutoImport({
-        imports: [
-          'react',
-          // {
-          //   wagmi: wagmiExports,
-          // },
-        ],
+        imports: ['react'],
         dts: './src/auto-imports.d.ts',
         resolvers: [
           IconsResolver({
@@ -58,9 +52,6 @@ export default defineConfig(({ mode }) => {
       EslintPlugin(),
       Analyze(),
       nodePolyfills(),
-      // legacy({
-      //   targets: ['defaults', 'not IE 11'],
-      // }),
     ],
     build: {
       rollupOptions: {
@@ -68,7 +59,6 @@ export default defineConfig(({ mode }) => {
           manualChunks: {
             'react-vendor': ['react', 'react-router-dom', 'react-dom'],
             'wagmi-vendor': ['wagmi', 'viem'],
-            'ui-vendor': ['antd'],
           },
         },
       },
