@@ -4,5 +4,5 @@
     "module": "esnext",
     "moduleResolution": "node"
   },
-  "include": ["vite.config.ts", "uno.config.ts", "wagmi.exports.ts", "preset.shadcn.ts"]
+  "include": ["vite.config.mts", "uno.config.ts", "wagmi.exports.ts", "preset.shadcn.ts"]
 }

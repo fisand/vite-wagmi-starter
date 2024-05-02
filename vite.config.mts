@@ -1,6 +1,6 @@
 import react from '@vitejs/plugin-react'
 import { resolve } from 'path'
-import Analyze from 'rollup-plugin-visualizer'
+// import Analyze from 'rollup-plugin-visualizer'
 import UnoCSS from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import { FileSystemIconLoader } from 'unplugin-icons/loaders'
@@ -50,7 +50,7 @@ export default defineConfig(({ mode }) => {
         ],
       }),
       EslintPlugin(),
-      Analyze(),
+      // Analyze(),
       nodePolyfills(),
     ],
     build: {
