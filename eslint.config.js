@@ -38,8 +38,6 @@ export default sxzz(
           'error',
           {
             'newlines-between': 'always-and-inside-groups',
-            groups: ['index', 'sibling', 'parent', 'internal', 'external', 'builtin', 'object', 'type'],
-            alphabetize: { order: 'asc', caseInsensitive: true },
           },
         ],
       },
