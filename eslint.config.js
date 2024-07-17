@@ -1,7 +1,7 @@
 import react from '@eslint-react/eslint-plugin'
 import { sxzz } from '@sxzz/eslint-config'
 import reactHooks from 'eslint-plugin-react-hooks'
-import importX from 'eslint-plugin-import-x'
+import simpleImportSort from 'eslint-plugin-simple-import-sort'
 
 export default sxzz(
   [
@@ -29,17 +29,30 @@ export default sxzz(
     {
       files: ['**/*.{ts,tsx}'],
       plugins: {
-        'import-x': importX,
+        'simple-import-sort': simpleImportSort,
       },
       rules: {
-        'import-x/newline-after-import': ['error', { count: 1 }],
-        'import-x/no-duplicates': 'error',
-        'import-x/order': [
+        'sort-imports': [
           'error',
           {
-            'newlines-between': 'always-and-inside-groups',
+            ignoreCase: true,
+            ignoreDeclarationSort: true,
+            ignoreMemberSort: true,
+            memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single'],
+            allowSeparatedGroups: false,
           },
         ],
+        'simple-import-sort/imports': [
+          'error',
+          {
+            groups: [[String.raw`^@?\w`], ['^'], [String.raw`^\.`], [String.raw`^\u0000`]],
+          },
+        ],
+        'simple-import-sort/exports': 'error',
+        'import/order': 'off',
+        'import/first': 'error',
+        'import/newline-after-import': 'error',
+        'import/no-duplicates': 'error',
       },
     },
   ],

@@ -1,6 +1,6 @@
 import { shorten } from '@did-network/dapp-sdk'
-import { useAccount, useConnect, useDisconnect } from 'wagmi'
 import type { ReactNode } from 'react'
+import { useAccount, useConnect, useDisconnect } from 'wagmi'
 
 export function WalletModal(props: {
   children: ({ isLoading }: { isLoading?: boolean }) => ReactNode
