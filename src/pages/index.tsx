@@ -3,12 +3,8 @@ import { useAccount } from 'wagmi'
 
 import { Header } from '@/components/layout/Header'
 import { NetworkSwitcher } from '@/components/SwitchNetworks'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { useToast } from '@/components/ui/use-toast'
 import { WalletModal } from '@/components/WalletModal'
-import { useWagmi } from '@/hooks'
-import { useCopyToClipboard } from '@/hooks/useCopy'
+import { useCopyToClipboard } from '@/hooks/use-copy'
 import WagmiIcon from '~icons/fisand-icons/wagmi-icon'
 
 const Home = () => {
@@ -20,7 +16,7 @@ const Home = () => {
     setShow(e)
   }
 
-  const [_, copy] = useCopyToClipboard()
+  const [, copy] = useCopyToClipboard()
   const { toast } = useToast()
 
   const copyHandler = useCallback(() => {
@@ -29,7 +25,7 @@ const Home = () => {
     toast({
       title: 'Copied success!',
     })
-  }, [copy, toast])
+  }, [copy])
 
   return (
     <>
@@ -39,9 +35,9 @@ const Home = () => {
             <NetworkSwitcher />
             <WalletModal open={show} onOpenChange={toggleModal} close={() => setShow(false)}>
               {({ isLoading }) => (
-                <Button className="flex items-center mr-4">
+                <Button className="mr-4 flex items-center">
                   {isLoading && (
-                    <span className="i-line-md:loading-twotone-loop inline-flex mr-1 w-4 h-4 text-white"></span>
+                    <span className="i-line-md:loading-twotone-loop mr-1 h-4 w-4 inline-flex text-white"></span>
                   )}{' '}
                   {address ? shorten(address) : 'Connect Wallet'}
                 </Button>
@@ -50,9 +46,9 @@ const Home = () => {
           </>
         }
       />
-      <div className="relative max-w-6xl min-h-[calc(100vh-8rem)] m-auto pt-16 flex-col-center justify-start">
+      <div className="relative m-auto max-w-6xl min-h-[calc(100vh-8rem)] flex-col-center justify-start pt-16">
         <p
-          className="font-bold bg-clip-text text-4xl lt-sm:text-2xl"
+          className="bg-clip-text text-4xl font-bold lt-sm:text-2xl"
           style={
             {
               backgroundImage: 'linear-gradient(270deg, #B4EAA1 0%, #F8D07A 100%)',
@@ -64,22 +60,22 @@ const Home = () => {
         >
           Unoi Dapp Template
         </p>
-        <p className="mt-3 text-5xl text-center font-bold lt-sm:text-3xl">The better template to launch a Web3 dapp</p>
-        <p className="mt-3 text-3xl text-center lt-sm:text-xl group">
+        <p className="mt-3 text-center text-5xl font-bold lt-sm:text-3xl">The better template to launch a Web3 dapp</p>
+        <p className="group mt-3 text-center text-3xl lt-sm:text-xl">
           Designed for everyone. <br className="hidden lt-sm:block" /> Built with{' '}
-          <WagmiIcon className="inline-flex h-5 group-hover:animate-bounce-alt !animate-delay-300" />{' '}
-          <span className="inline-flex w-5 h-5 group-hover:animate-bounce-alt transition-all i-logos:vitejs" />{' '}
-          <span className="inline-flex w-5 h-5 !animate-delay-200 group-hover:animate-bounce-alt transition-all i-logos:unocss " />
+          <WagmiIcon className="h-5 inline-flex group-hover:animate-bounce-alt !animate-delay-300" />{' '}
+          <span className="i-logos:vitejs h-5 w-5 inline-flex transition-all group-hover:animate-bounce-alt" />{' '}
+          <span className="i-logos:unocss h-5 w-5 inline-flex transition-all group-hover:animate-bounce-alt !animate-delay-200" />
           .
         </p>
         <div className="mt-8 flex-center">
-          <div className="m-auto py-2 px-8 flex-center bg-#666 rounded-full text-white">
+          <div className="m-auto flex-center rounded-full bg-#666 px-8 py-2 text-white">
             pnpm dlx fisand
             <span className="i-carbon:copy ml-6 cursor-pointer active:scale-95" onClick={copyHandler} />
           </div>
         </div>
-        <div className="mt-16 max-w-6xl m-auto px-4 flex gap-8 flex-wrap items-stretch justify-center">
-          <div className="p-.5 rounded-lg hover:bg-gradient-conic hover:bg-gradient-[from_var(--conic-deg),#B4EAA1,transparent,#B4EAA1] hover:animate-[conic_2.5s_infinite_linear]">
+        <div className="m-auto mt-16 max-w-6xl flex flex-wrap items-stretch justify-center gap-8 px-4">
+          <div className="rounded-lg p-.5 hover:animate-[conic_2.5s_infinite_linear] hover:bg-gradient-[from_var(--conic-deg),#B4EAA1,transparent,#B4EAA1] hover:bg-gradient-conic">
             <Card className="w-[318px] rounded-lg">
               <CardHeader>
                 <CardTitle className="flex gap-1">
@@ -110,11 +106,11 @@ const Home = () => {
               </CardContent>
             </Card>
           </div>
-          <div className="p-.5 rounded-lg hover:bg-gradient-conic hover:bg-gradient-[from_var(--conic-deg),#B4EAA1,transparent,#B4EAA1] hover:animate-[conic_2.5s_infinite_linear]">
+          <div className="rounded-lg p-.5 hover:animate-[conic_2.5s_infinite_linear] hover:bg-gradient-[from_var(--conic-deg),#B4EAA1,transparent,#B4EAA1] hover:bg-gradient-conic">
             <Card className="w-[318px] rounded-lg">
               <CardHeader>
                 <CardTitle className="flex gap-2">
-                  <span className="i-logos:vitejs inline-flex h-4 -group-hover:rotate-30 transition-all" /> Vite
+                  <span className="i-logos:vitejs h-4 inline-flex transition-all -group-hover:rotate-30" /> Vite
                 </CardTitle>
                 <CardDescription>Next Generation Frontend Tooling</CardDescription>
               </CardHeader>
@@ -128,11 +124,11 @@ const Home = () => {
               </CardContent>
             </Card>
           </div>
-          <div className="p-.5 rounded-lg hover:bg-gradient-conic hover:bg-gradient-[from_var(--conic-deg),#B4EAA1,transparent,#B4EAA1] hover:animate-[conic_2.5s_infinite_linear]">
+          <div className="rounded-lg p-.5 hover:animate-[conic_2.5s_infinite_linear] hover:bg-gradient-[from_var(--conic-deg),#B4EAA1,transparent,#B4EAA1] hover:bg-gradient-conic">
             <Card className="w-[318px] rounded-lg">
               <CardHeader>
                 <CardTitle className="flex gap-2">
-                  <span className="i-logos:unocss inline-flex h-4 group-hover:rotate-23 transition-all" />
+                  <span className="i-logos:unocss h-4 inline-flex transition-all group-hover:rotate-23" />
                   unocss
                 </CardTitle>
                 <CardDescription>Instant On-demand Atomic CSS Engine</CardDescription>
@@ -162,22 +158,11 @@ const Home = () => {
           Unocss Docs
         </a>
       </p>
-      <p>
-        {['', '', '', ''].map((_, index) => (
-          <Item key={index} />
-        ))}
-      </p>
       <div className="border-t-1 border-border border-solid">
-        <div className="max-w-6xl py-6 mx-auto sm:px-8 lt-sm:px-4 text-center">© 2022-present Hang Zou</div>
+        <div className="mx-auto max-w-6xl py-6 text-center lt-sm:px-4 sm:px-8">© 2022-present Hang Zou</div>
       </div>
     </>
   )
 }
 
 export default Home
-
-function Item() {
-  const { status } = useWagmi()
-
-  return <span></span>
-}

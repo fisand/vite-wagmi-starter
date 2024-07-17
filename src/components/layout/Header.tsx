@@ -1,12 +1,12 @@
-import { ReactNode } from 'react'
+import type { ReactNode } from 'react'
 
 export const Header = ({ action }: { action?: ReactNode }) => {
   return (
-    <div className="h-16 border-b-1 border-solid border-border box-border sticky top-0 bg-white z-10">
-      <div className="max-w-6xl m-auto h-full flex justify-between items-center sm:px-8 lt-sm:px-4">
-        <div className="flex items-center font-bold cursor-pointer">
+    <div className="sticky top-0 z-10 box-border h-16 border-b-1 border-border border-solid bg-white">
+      <div className="m-auto h-full max-w-6xl flex items-center justify-between lt-sm:px-4 sm:px-8">
+        <div className="flex cursor-pointer items-center font-bold">
           <span className="text-xl">Unoi</span>
-          <span className="flex-col-center ml-3 py-.25 px-1.5 text-xs text-#666 bg-white rounded-full font-light">
+          <span className="ml-3 flex-col-center rounded-full bg-white px-1.5 py-.25 text-xs text-#666 font-light">
             <span
               style={
                 {
@@ -27,9 +27,10 @@ export const Header = ({ action }: { action?: ReactNode }) => {
           <a
             href="https://github.com/fisand/vite-antd-seed"
             target="_blank"
+            rel="noreferrer noopener"
             className="flex-col-center text-primary transition-all hover:scale-95"
           >
-            <span className="inline-flex w-8 h-8 i-carbon:logo-github"></span>
+            <span className="i-carbon:logo-github h-8 w-8 inline-flex"></span>
           </a>
         </div>
       </div>

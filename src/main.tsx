@@ -6,15 +6,15 @@ import { WagmiProvider } from 'wagmi'
 import App from './App'
 import { wagmiConfig } from './wagmi.config'
 
-import './assets/styles/index.css'
 import '@unocss/reset/tailwind.css'
 import 'uno.css'
+import './assets/styles/index.css'
 
 console.table(import.meta.env)
 
 const queryClient = new QueryClient()
 
-const root = createRoot(document.getElementById('root')!)
+const root = createRoot(document.querySelector('#root')!)
 root.render(
   <WagmiProvider config={wagmiConfig}>
     <QueryClientProvider client={queryClient}>
@@ -22,5 +22,5 @@ root.render(
         <App />
       </BrowserRouter>
     </QueryClientProvider>
-  </WagmiProvider>
+  </WagmiProvider>,
 )

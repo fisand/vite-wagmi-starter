@@ -1,7 +1,24 @@
 {
   "name": "vite-wagmi-starter",
   "version": "0.0.0",
+  "packageManager": "pnpm@9.3.0+sha512.ee7b93e0c2bd11409c6424f92b866f31d3ea1bef5fbe47d3c7500cdc3c9668833d2e55681ad66df5b640c61fa9dc25d546efa54d76d7f8bf54b13614ac293631",
   "description": "vite wagmi starter",
+  "type": "module",
+  "keywords": [
+    "vite",
+    "wagmi",
+    "unocss"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/fisand/vite-wagmi-seed#readme",
+  "bugs": {
+    "url": "https://github.com/fisand/vite-wagmi-seed/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fisand/vite-wagmi-seed.git"
+  },
+  "author": "zouhang",
   "main": "index.js",
   "scripts": {
     "dev": "vite",
@@ -33,11 +50,13 @@
     "wagmi": "^2.5.17"
   },
   "devDependencies": {
+    "@eslint-react/eslint-plugin": "^1.5.27",
     "@iconify-json/carbon": "^1.1.14",
     "@iconify-json/line-md": "^1.1.24",
     "@iconify-json/logos": "^1.1.25",
     "@iconify-json/lucide": "^1.1.83",
     "@svgr/core": "^6.5.1",
+    "@sxzz/eslint-config": "^3.14.0",
     "@types/node": "^18.15.11",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
@@ -46,13 +65,9 @@
     "@unocss/transformer-variant-group": "^0.59.4",
     "@vitejs/plugin-legacy": "^5.3.2",
     "@vitejs/plugin-react": "4.2.1",
-    "eslint": "^8.33.0",
-    "eslint-config-prettier": "^8.6.0",
-    "eslint-config-react-app": "^7.0.1",
-    "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "eslint": "^9.7.0",
+    "eslint-plugin-import-x": "^3.0.1",
+    "eslint-plugin-react-hooks": "5.1.0-rc-01172397-20240716",
     "pkg-exports": "^0.1.2",
     "prettier": "2.8.3",
     "rollup-plugin-visualizer": "^5.9.0",
@@ -62,25 +77,10 @@
     "unocss-preset-shadcn": "^0.2.3",
     "unplugin-auto-import": "^0.13.0",
     "unplugin-icons": "^0.15.2",
-    "vite": "5.2.8",
+    "vite": "5.3.4",
     "vite-plugin-checker": "^0.6.4",
     "vite-plugin-eslint": "^1.8.1",
     "vite-plugin-node-stdlib-browser": "^0.2.1",
     "vite-plugin-pages": "^0.32.1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/fisand/vite-wagmi-seed.git"
-  },
-  "keywords": [
-    "vite",
-    "wagmi",
-    "unocss"
-  ],
-  "author": "zouhang",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/fisand/vite-wagmi-seed/issues"
-  },
-  "homepage": "https://github.com/fisand/vite-wagmi-seed#readme"
+  }
 }

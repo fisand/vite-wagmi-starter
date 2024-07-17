@@ -6,7 +6,7 @@ import { useToast } from '@/components/ui/use-toast'
 import routes from '~react-pages'
 
 function Redirect({ to }: { to: string }) {
-  let navigate = useNavigate()
+  const navigate = useNavigate()
   useEffect(() => {
     navigate(to)
   }, [navigate, to])
@@ -37,4 +37,5 @@ function App() {
   )
 }
 
+// eslint-disable-next-line import/no-default-export
 export default App

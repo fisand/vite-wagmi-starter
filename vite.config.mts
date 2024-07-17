@@ -1,5 +1,5 @@
+import { resolve } from 'node:path'
 import react from '@vitejs/plugin-react'
-import { resolve } from 'path'
 // import Analyze from 'rollup-plugin-visualizer'
 import UnoCSS from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
@@ -13,6 +13,7 @@ import nodePolyfills from 'vite-plugin-node-stdlib-browser'
 import Pages from 'vite-plugin-pages'
 
 export default defineConfig(({ mode }) => {
+  // eslint-disable-next-line node/prefer-global/process
   const env = loadEnv(mode, process.cwd(), '')
 
   return {
@@ -30,7 +31,7 @@ export default defineConfig(({ mode }) => {
         jsx: 'react',
         customCollections: {
           'fisand-icons': FileSystemIconLoader(`${resolve(__dirname, 'src/assets/icons')}/`, (svg) =>
-            svg.replace(/^<svg /, '<svg fill="currentColor" ')
+            svg.replace(/^<svg /, '<svg fill="currentColor" '),
           ),
         },
       }),
@@ -48,6 +49,7 @@ export default defineConfig(({ mode }) => {
             componentPrefix: 'Icon',
           }),
         ],
+        dirs: ['./src/components/ui'],
       }),
       EslintPlugin(),
       // Analyze(),

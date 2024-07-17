@@ -10,7 +10,7 @@ http.interceptors.request.use(
   },
   (error) => {
     return Promise.reject(error)
-  }
+  },
 )
 http.interceptors.response.use(
   async ({ data }) => {
@@ -26,7 +26,7 @@ http.interceptors.response.use(
       console.error(response)
       throw new Error('Network Error')
     }
-  }
+  },
 )
 
 export const post = http.post as <T>(...rest: Parameters<typeof http.post>) => Promise<T>

@@ -33,7 +33,7 @@ export function NetworkSwitcher() {
         <SelectValue>
           <span className="flex-center">
             {isPending && (
-              <span className="i-line-md:loading-twotone-loop inline-flex mr-1 w-4 h-4 text-primary"></span>
+              <span className="i-line-md:loading-twotone-loop mr-1 h-4 w-4 inline-flex text-primary"></span>
             )}{' '}
             {chain.name}
           </span>
@@ -46,12 +46,12 @@ export function NetworkSwitcher() {
               <SelectItem value={`${x.id}`} key={x.id} className="">
                 <span className="flex-center">
                   {isPending && x.id === pendingChainId && (
-                    <span className="i-line-md:loading-twotone-loop inline-flex mr-1 w-4 h-4 text-primary"></span>
+                    <span className="i-line-md:loading-twotone-loop mr-1 h-4 w-4 inline-flex text-primary"></span>
                   )}{' '}
                   {x.name}
                 </span>
               </SelectItem>
-            )
+            ),
           )}
         </SelectGroup>
       </SelectContent>

@@ -1,5 +1,4 @@
 import { shorten } from '@did-network/dapp-sdk'
-import { ReactNode } from 'react'
 import { useAccount, useConnect, useDisconnect } from 'wagmi'
 
 import { Button } from '@/components/ui/button'
@@ -12,6 +11,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog'
+import type { ReactNode } from 'react'
 
 export function WalletModal(props: {
   children: ({ isLoading }: { isLoading?: boolean }) => ReactNode
@@ -27,7 +27,7 @@ export function WalletModal(props: {
   return (
     <Dialog open={props.open} onOpenChange={props.onOpenChange}>
       <DialogTrigger asChild>{props.children({ isLoading: isPending })}</DialogTrigger>
-      <DialogContent className="sm:max-w-[425px] md:top-70">
+      <DialogContent className="md:top-90 sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle>Wallet</DialogTitle>
           <DialogDescription>connect to web3</DialogDescription>
@@ -35,13 +35,13 @@ export function WalletModal(props: {
         <div className="w-full">
           {address ? (
             <>
-              <div className="flex-center my-3">{shorten(address)}</div>
+              <div className="my-3 flex-center">{shorten(address)}</div>
               <Button
-                onClick={(e) => {
+                onClick={() => {
                   disconnect()
                   props.close?.()
                 }}
-                className="flex-center w-full"
+                className="w-full flex-center"
               >
                 disconnect <span className="i-carbon:cookie"></span>
               </Button>
@@ -51,14 +51,14 @@ export function WalletModal(props: {
               {connectors.map((connector) => (
                 <Button
                   key={connector.id}
-                  onClick={async (e) => {
+                  onClick={async () => {
                     setPendingConnectorId(connector.id)
                     await connectAsync({
                       connector,
                     })
                     props.close?.()
                   }}
-                  className="w-full mb-3"
+                  className="mb-3 w-full"
                   size="lg"
                 >
                   {connector.name}
