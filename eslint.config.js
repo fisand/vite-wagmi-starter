@@ -34,6 +34,14 @@ export default sxzz(
       rules: {
         'import-x/newline-after-import': ['error', { count: 1 }],
         'import-x/no-duplicates': 'error',
+        'import-x/order': [
+          'error',
+          {
+            'newlines-between': 'always-and-inside-groups',
+            groups: ['index', 'sibling', 'parent', 'internal', 'external', 'builtin', 'object', 'type'],
+            alphabetize: { order: 'asc', caseInsensitive: true },
+          },
+        ],
       },
     },
   ],
