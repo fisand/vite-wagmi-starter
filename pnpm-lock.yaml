@@ -129,6 +129,9 @@ importers:
       eslint-plugin-react-hooks:
         specifier: 5.1.0-rc-01172397-20240716
         version: 5.1.0-rc-01172397-20240716(eslint@9.7.0)
+      eslint-plugin-simple-import-sort:
+        specifier: ^12.1.1
+        version: 12.1.1(eslint@9.7.0)
       pkg-exports:
         specifier: ^0.1.2
         version: 0.1.2
@@ -4339,6 +4342,11 @@ packages:
     peerDependenciesMeta:
       typescript:
         optional: true
+
+  eslint-plugin-simple-import-sort@12.1.1:
+    resolution: {integrity: sha512-6nuzu4xwQtE3332Uz0to+TxDQYRLTKRESSc2hefVT48Zc8JthmN23Gx9lnYhu0FtkRSL1oxny3kJ2aveVhmOVA==}
+    peerDependencies:
+      eslint: '>=5.0.0'
 
   eslint-plugin-unicorn@54.0.0:
     resolution: {integrity: sha512-XxYLRiYtAWiAjPv6z4JREby1TAE2byBC7wlh0V4vWDCpccOSU1KovWV//jqPXF6bq3WKxqX9rdjoRQ1EhdmNdQ==}
@@ -13218,6 +13226,10 @@ snapshots:
       typescript: 5.3.3
     transitivePeerDependencies:
       - supports-color
+
+  eslint-plugin-simple-import-sort@12.1.1(eslint@9.7.0):
+    dependencies:
+      eslint: 9.7.0
 
   eslint-plugin-unicorn@54.0.0(eslint@9.7.0):
     dependencies:
