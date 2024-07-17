@@ -1,15 +1,5 @@
 import { useAccount, useSwitchChain } from 'wagmi'
 
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select'
-
 export function NetworkSwitcher() {
   const { chains, switchChain, isPending } = useSwitchChain()
   const { chain } = useAccount()

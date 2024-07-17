@@ -1,16 +1,5 @@
 import { shorten } from '@did-network/dapp-sdk'
 import { useAccount, useConnect, useDisconnect } from 'wagmi'
-
-import { Button } from '@/components/ui/button'
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from '@/components/ui/dialog'
 import type { ReactNode } from 'react'
 
 export function WalletModal(props: {

@@ -25,7 +25,7 @@ const Home = () => {
     toast({
       title: 'Copied success!',
     })
-  }, [copy])
+  }, [copy, toast])
 
   return (
     <>
