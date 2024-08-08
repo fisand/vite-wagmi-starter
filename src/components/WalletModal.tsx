@@ -32,12 +32,14 @@ export function WalletModal(props: {
                 }}
                 className="w-full flex-center"
               >
-                disconnect <span className="i-carbon:cookie"></span>
+                disconnect
+                {' '}
+                <span className="i-carbon:cookie" />
               </Button>
             </>
           ) : (
             <div className="flex-col-center">
-              {connectors.map((connector) => (
+              {connectors.map(connector => (
                 <Button
                   key={connector.id}
                   onClick={async () => {

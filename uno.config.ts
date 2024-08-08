@@ -1,5 +1,6 @@
 import transformerVariantGroup from '@unocss/transformer-variant-group'
-import { defineConfig, presetIcons, presetUno, presetWind, UserConfig } from 'unocss'
+import type { UserConfig } from 'unocss'
+import { defineConfig, presetIcons, presetUno, presetWind } from 'unocss'
 import { presetAnimations } from 'unocss-preset-animations'
 import { presetShadcn } from 'unocss-preset-shadcn'
 

@@ -15,7 +15,8 @@ export function useCopyToClipboard(): [CopiedValue, CopyFn] {
       await navigator.clipboard.writeText(text)
       setCopiedText(text)
       return true
-    } catch (error) {
+    }
+    catch (error) {
       console.warn('Copy failed', error)
       setCopiedText(null)
       return false

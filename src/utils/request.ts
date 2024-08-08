@@ -5,27 +5,22 @@ export const http = axios.create({
 })
 
 http.interceptors.request.use(
-  (config) => {
-    return config
-  },
-  (error) => {
-    return Promise.reject(error)
-  },
+  config => config,
+  error => Promise.reject(error),
 )
 http.interceptors.response.use(
-  async ({ data }) => {
+  ({ data }) => {
     if (data.error) {
       throw new Error(data.error)
     }
     return data
   },
-  async ({ response }) => {
-    if (response && response.data && response.data.error) {
-      throw new Error(response.data.error)
-    } else {
+  ({ response }) => {
+    if (!(response && response.data && response.data.error)) {
       console.error(response)
       throw new Error('Network Error')
     }
+    throw new Error(response.data.error)
   },
 )
 

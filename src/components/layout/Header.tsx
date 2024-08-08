@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 
-export const Header = ({ action }: { action?: ReactNode }) => {
+export function Header({ action }: { action?: ReactNode }) {
   return (
     <div className="sticky top-0 z-10 box-border h-16 border-b-1 border-border border-solid bg-white">
       <div className="m-auto h-full max-w-6xl flex items-center justify-between lt-sm:px-4 sm:px-8">
@@ -30,7 +30,7 @@ export const Header = ({ action }: { action?: ReactNode }) => {
             rel="noreferrer noopener"
             className="flex-col-center text-primary transition-all hover:scale-95"
           >
-            <span className="i-carbon:logo-github h-8 w-8 inline-flex"></span>
+            <span className="i-carbon:logo-github h-8 w-8 inline-flex" />
           </a>
         </div>
       </div>

@@ -1,4 +1,6 @@
 import { resolve } from 'node:path'
+
+import EslintPlugin from '@nabla/vite-plugin-eslint'
 import react from '@vitejs/plugin-react'
 // import Analyze from 'rollup-plugin-visualizer'
 import UnoCSS from 'unocss/vite'
@@ -8,18 +10,17 @@ import IconsResolver from 'unplugin-icons/resolver'
 import Icons from 'unplugin-icons/vite'
 import { defineConfig, loadEnv } from 'vite'
 import Checker from 'vite-plugin-checker'
-import EslintPlugin from 'vite-plugin-eslint'
 import nodePolyfills from 'vite-plugin-node-stdlib-browser'
 import Pages from 'vite-plugin-pages'
 
 export default defineConfig(({ mode }) => {
-  // eslint-disable-next-line node/prefer-global/process
   const env = loadEnv(mode, process.cwd(), '')
 
   return {
     base: env.BASE,
     resolve: {
       alias: {
+        // eslint-disable-next-line unicorn/prefer-module
         '@/': `${resolve(__dirname, 'src')}/`,
       },
     },
@@ -30,9 +31,9 @@ export default defineConfig(({ mode }) => {
         compiler: 'jsx',
         jsx: 'react',
         customCollections: {
-          'fisand-icons': FileSystemIconLoader(`${resolve(__dirname, 'src/assets/icons')}/`, (svg) =>
-            svg.replace(/^<svg /, '<svg fill="currentColor" '),
-          ),
+          // eslint-disable-next-line unicorn/prefer-module
+          'fisand-icons': FileSystemIconLoader(`${resolve(__dirname, 'src/assets/icons')}/`, svg =>
+            svg.replace(/^<svg /, '<svg fill="currentColor" ')),
         },
       }),
       Pages({
@@ -62,6 +63,18 @@ export default defineConfig(({ mode }) => {
             'react-vendor': ['react', 'react-router-dom', 'react-dom'],
             'wagmi-vendor': ['wagmi', 'viem'],
           },
+        },
+        onLog(level, log, handler) {
+          // ignore rollup warning about 'use client'
+          if (log.message.includes('Module level directives cause errors when bundled'))
+            return
+
+          // ignore sourcemap warning about 'Can't resolve original location of error.'
+          if (log.cause && (log.cause as any).message === `Can't resolve original location of error.`) {
+            return
+          }
+
+          handler(level, log)
         },
       },
     },

@@ -19,23 +19,20 @@ function App() {
     <>
       {useRoutes([...routes, { path: '*', element: <Redirect to="/" /> }])}
       <ToastProvider duration={2000}>
-        {toasts.map(function ({ id, title, description, action, ...props }) {
-          return (
-            <Toast key={id} {...props}>
-              <div className="grid gap-1">
-                {title && <ToastTitle>{title}</ToastTitle>}
-                {description && <ToastDescription>{description}</ToastDescription>}
-              </div>
-              {action}
-              <ToastClose />
-            </Toast>
-          )
-        })}
+        {toasts.map(({ id, title, description, action, ...props }) => (
+          <Toast key={id} {...props}>
+            <div className="grid gap-1">
+              {title && <ToastTitle>{title}</ToastTitle>}
+              {description && <ToastDescription>{description}</ToastDescription>}
+            </div>
+            {action}
+            <ToastClose />
+          </Toast>
+        ))}
         <ToastViewport />
       </ToastProvider>
     </>
   )
 }
 
-// eslint-disable-next-line import/no-default-export
 export default App

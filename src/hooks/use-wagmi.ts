@@ -2,7 +2,7 @@ import { useAccount, useContractReads } from 'wagmi'
 
 import { useWagmiContract } from './use-contract'
 
-export const useWagmi = () => {
+export function useWagmi() {
   const { address } = useAccount()
   const wagmiContract = useWagmiContract()
 

@@ -7,7 +7,7 @@ import { WalletModal } from '@/components/WalletModal'
 import { useCopyToClipboard } from '@/hooks/use-copy'
 import WagmiIcon from '~icons/fisand-icons/wagmi-icon'
 
-const Home = () => {
+function Home() {
   const { address } = useAccount()
 
   const [show, setShow] = useState(false)
@@ -27,44 +27,53 @@ const Home = () => {
     })
   }, [copy, toast])
 
+  // eslint-disable-next-line @eslint-react/no-nested-components
+  const Action = () => (
+    <>
+      <NetworkSwitcher />
+      <WalletModal open={show} onOpenChange={toggleModal} close={() => setShow(false)}>
+        {({ isLoading }) => (
+          <Button className="mr-4 flex items-center">
+            {isLoading && (
+              <span className="i-line-md:loading-twotone-loop mr-1 h-4 w-4 inline-flex text-white" />
+            )}
+            {' '}
+            {address ? shorten(address) : 'Connect Wallet'}
+          </Button>
+        )}
+      </WalletModal>
+    </>
+  )
+
   return (
     <>
       <Header
-        action={
-          <>
-            <NetworkSwitcher />
-            <WalletModal open={show} onOpenChange={toggleModal} close={() => setShow(false)}>
-              {({ isLoading }) => (
-                <Button className="mr-4 flex items-center">
-                  {isLoading && (
-                    <span className="i-line-md:loading-twotone-loop mr-1 h-4 w-4 inline-flex text-white"></span>
-                  )}{' '}
-                  {address ? shorten(address) : 'Connect Wallet'}
-                </Button>
-              )}
-            </WalletModal>
-          </>
-        }
+        action={<Action />}
       />
       <div className="relative m-auto max-w-6xl min-h-[calc(100vh-8rem)] flex-col-center justify-start pt-16">
         <p
           className="bg-clip-text text-4xl font-bold lt-sm:text-2xl"
-          style={
-            {
-              backgroundImage: 'linear-gradient(270deg, #B4EAA1 0%, #F8D07A 100%)',
-              display: 'inline-block',
-              lineHeight: 1,
-              WebkitTextFillColor: 'transparent',
-            } as any
-          }
+          style={{
+            backgroundImage: 'linear-gradient(270deg, #B4EAA1 0%, #F8D07A 100%)',
+            display: 'inline-block',
+            lineHeight: 1,
+            WebkitTextFillColor: 'transparent',
+          }}
         >
           Unoi Dapp Template
         </p>
         <p className="mt-3 text-center text-5xl font-bold lt-sm:text-3xl">The better template to launch a Web3 dapp</p>
         <p className="group mt-3 text-center text-3xl lt-sm:text-xl">
-          Designed for everyone. <br className="hidden lt-sm:block" /> Built with{' '}
-          <WagmiIcon className="h-5 inline-flex group-hover:animate-bounce-alt !animate-delay-300" />{' '}
-          <span className="i-logos:vitejs h-5 w-5 inline-flex transition-all group-hover:animate-bounce-alt" />{' '}
+          Designed for everyone.
+          {' '}
+          <br className="hidden lt-sm:block" />
+          {' '}
+          Built with
+          {' '}
+          <WagmiIcon className="h-5 inline-flex group-hover:animate-bounce-alt !animate-delay-300" />
+          {' '}
+          <span className="i-logos:vitejs h-5 w-5 inline-flex transition-all group-hover:animate-bounce-alt" />
+          {' '}
           <span className="i-logos:unocss h-5 w-5 inline-flex transition-all group-hover:animate-bounce-alt !animate-delay-200" />
           .
         </p>
@@ -90,7 +99,7 @@ const Home = () => {
                       clip-rule="evenodd"
                       d="M47.9961 119.99C47.9961 133.244 58.7404 143.988 71.9942 143.988H119.99C133.244 143.988 143.988 133.244 143.988 119.99V23.9981C143.988 10.7443 154.733 0 167.986 0C181.24 0 191.984 10.7443 191.984 23.9981V119.99C191.984 133.244 202.729 143.988 215.983 143.988H263.979C277.232 143.988 287.977 133.244 287.977 119.99V23.9981C287.977 10.7443 298.721 0 311.975 0C325.229 0 335.973 10.7443 335.973 23.9981V167.986C335.973 181.24 325.229 191.984 311.975 191.984H23.9981C10.7443 191.984 0 181.24 0 167.986L8.47642e-06 23.9981C9.4127e-06 10.7443 10.7443 0 23.9981 0C37.2518 0 47.9961 10.7443 47.9961 23.9981L47.9961 119.99ZM388.54 197.698C406.212 197.698 420.538 183.373 420.538 165.701C420.538 148.029 406.212 133.704 388.54 133.704C370.869 133.704 356.543 148.029 356.543 165.701C356.543 183.373 370.869 197.698 388.54 197.698Z"
                       fill="inherit"
-                    ></path>
+                    />
                   </svg>
                   Wagmi
                 </CardTitle>
@@ -101,7 +110,7 @@ const Home = () => {
                   <span>20+ hooks</span>
                   <span>Built-in wallet connectors</span>
                   <span>TypeScript ready</span>
-                  <span className="i-lucide:more-horizontal h-4"></span>
+                  <span className="i-lucide:more-horizontal h-4" />
                 </div>
               </CardContent>
             </Card>
@@ -110,7 +119,9 @@ const Home = () => {
             <Card className="w-[318px] rounded-lg">
               <CardHeader>
                 <CardTitle className="flex gap-2">
-                  <span className="i-logos:vitejs h-4 inline-flex transition-all -group-hover:rotate-30" /> Vite
+                  <span className="i-logos:vitejs h-4 inline-flex transition-all -group-hover:rotate-30" />
+                  {' '}
+                  Vite
                 </CardTitle>
                 <CardDescription>Next Generation Frontend Tooling</CardDescription>
               </CardHeader>
@@ -119,7 +130,7 @@ const Home = () => {
                   <span>Instant Server Start</span>
                   <span>Lightning Fast HMR</span>
                   <span>Rich Features</span>
-                  <span className="i-lucide:more-horizontal h-4"></span>
+                  <span className="i-lucide:more-horizontal h-4" />
                 </div>
               </CardContent>
             </Card>
@@ -138,7 +149,7 @@ const Home = () => {
                   <span>Fully Customizable</span>
                   <span>Instant</span>
                   <span>Rich Integrations</span>
-                  <span className="i-lucide:more-horizontal h-4"></span>
+                  <span className="i-lucide:more-horizontal h-4" />
                 </div>
               </CardContent>
             </Card>
