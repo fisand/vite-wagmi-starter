@@ -76,7 +76,7 @@
     "unplugin-icons": "^0.15.2",
     "vite": "5.4.0",
     "vite-plugin-checker": "^0.7.2",
-    "vite-plugin-node-stdlib-browser": "^0.2.1",
+    "vite-plugin-node-polyfills": "^0.22.0",
     "vite-plugin-pages": "^0.32.3"
   }
 }

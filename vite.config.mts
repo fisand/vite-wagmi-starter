@@ -10,7 +10,7 @@ import IconsResolver from 'unplugin-icons/resolver'
 import Icons from 'unplugin-icons/vite'
 import { defineConfig, loadEnv } from 'vite'
 import Checker from 'vite-plugin-checker'
-import nodePolyfills from 'vite-plugin-node-stdlib-browser'
+import { nodePolyfills } from 'vite-plugin-node-polyfills'
 import Pages from 'vite-plugin-pages'
 
 export default defineConfig(({ mode }) => {
