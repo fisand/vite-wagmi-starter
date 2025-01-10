@@ -1,6 +1,6 @@
 # unoi
 
-![v](https://img.shields.io/badge/vite-v5.4.0-brightgreen) ![w](https://img.shields.io/badge/wagmi-v2.12.4-brightgreen)  
+![v](https://img.shields.io/badge/vite-v6.0.7-brightgreen) ![w](https://img.shields.io/badge/wagmi-v2.14.7-brightgreen)  
 
 💖 power by vite + react + wagmi + ts
 
