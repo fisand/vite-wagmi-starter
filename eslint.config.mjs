@@ -6,14 +6,15 @@ export default defineConfig(
     restrictedSyntax: ['jsx', 'tsx'],
     strict: true,
     unocss: true,
+    tailwindCSS: false,
   },
   {
     rules: {
       'react-hooks/rules-of-hooks': 'error',
       'react-hooks/exhaustive-deps': 'error',
       'react-refresh/only-export-components': 'off',
-
       '@typescript-eslint/no-explicit-any': 'warn',
+      '@eslint-react/jsx-no-undef': 'off',
     },
   },
 )

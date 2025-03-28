@@ -8,14 +8,15 @@ export function WalletModal(props: {
   onOpenChange: (open: boolean) => void
   close?: () => void
 }) {
+  const { children, open, onOpenChange, close } = props
   const { connectAsync, connectors, isPending } = useConnect()
   const { address, isConnecting } = useAccount()
   const { disconnect } = useDisconnect()
   const [pendingConnectorId, setPendingConnectorId] = useState('')
 
   return (
-    <Dialog open={props.open} onOpenChange={props.onOpenChange}>
-      <DialogTrigger asChild>{props.children({ isLoading: isPending })}</DialogTrigger>
+    <Dialog open={open} onOpenChange={onOpenChange}>
+      <DialogTrigger asChild>{children({ isLoading: isPending })}</DialogTrigger>
       <DialogContent className="md:top-90 sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle>Wallet</DialogTitle>
@@ -28,7 +29,7 @@ export function WalletModal(props: {
               <Button
                 onClick={() => {
                   disconnect()
-                  props.close?.()
+                  close?.()
                 }}
                 className="w-full flex-center"
               >
@@ -47,7 +48,7 @@ export function WalletModal(props: {
                     await connectAsync({
                       connector,
                     })
-                    props.close?.()
+                    close?.()
                   }}
                   className="mb-3 w-full"
                   size="lg"

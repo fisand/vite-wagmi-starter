@@ -2,7 +2,6 @@ import { resolve } from 'node:path'
 
 import EslintPlugin from '@nabla/vite-plugin-eslint'
 import react from '@vitejs/plugin-react'
-// import Analyze from 'rollup-plugin-visualizer'
 import UnoCSS from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import { FileSystemIconLoader } from 'unplugin-icons/loaders'
@@ -53,8 +52,9 @@ export default defineConfig(({ mode }) => {
         dirs: ['./src/components/ui'],
       }),
       EslintPlugin(),
-      // Analyze(),
-      nodePolyfills(),
+      nodePolyfills({
+        include: ['buffer'],
+      }),
     ],
     build: {
       rollupOptions: {
@@ -65,11 +65,17 @@ export default defineConfig(({ mode }) => {
           },
         },
         onLog(level, log, handler) {
+          // ignore /*#__PURE__*/
+          if (log.message.includes('/*#__PURE__*/')) {
+            return
+          }
+
           // ignore rollup warning about 'use client'
           if (log.message.includes('Module level directives cause errors when bundled'))
             return
 
           // ignore sourcemap warning about 'Can't resolve original location of error.'
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           if (log.cause && (log.cause as any).message === `Can't resolve original location of error.`) {
             return
           }
