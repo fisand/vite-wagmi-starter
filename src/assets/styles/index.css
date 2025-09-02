@@ -23,9 +23,24 @@ code {
 
 @keyframes conic {
   from {
-    --conic-deg: 0deg;
+    --conic-deg: 360deg;
   }
   to {
-    --conic-deg: 360deg;
+    --conic-deg: 0deg;
+  }
+}
+
+@keyframes lord-bounce {
+  0%, 100% {
+    -webkit-transform: translateY(60px) translateX(-42px);
+    transform: translateY(60px) translateX(-42px);
+    -webkit-animation-timing-function: cubic-bezier(0.2,0.8,0.2,1);
+    animation-timing-function: cubic-bezier(0.2,0.8,0.2,1);
+  }
+  50% {
+    -webkit-transform: translateY(68px) translateX(-42px);
+    transform: translateY(68px) translateX(-42px);
+    -webkit-animation-timing-function: cubic-bezier(0.2,0,0.0,1);
+    animation-timing-function: cubic-bezier(0.2,0,0.0,1);
   }
 }
